@@ -36,7 +36,8 @@ namespace Practica01
 
         private void Cargar_Peliculas_Click(object sender, RoutedEventArgs e)
         {
-            ContentArea.Content= new Cargar_Peliculas();
+            if (Controlador.isAdmin()) { Frame.Navigate(new Cargar_Peliculas()); } else { MessageBox.Show("No tienes los permisos necesarios para acceder", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); }
+            
         }
 
         private void Filtrar_Click(object sender, RoutedEventArgs e)

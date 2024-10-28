@@ -6,10 +6,10 @@
       xmlns:local="clr-namespace:Practica01"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Cargar_Peliculas">
+      Title="Cargar_Peliculas" Height="368">
 
-    <Grid HorizontalAlignment="Stretch" Height="NaN" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="NaN" Background="White">
-        <Label Content="PRUEBA CARGAR PELIS" HorizontalAlignment="Center" Margin="0,207,0,0" VerticalAlignment="Top" Width="176" Height="33"/>
+    <Grid Width="NaN" Background="White" Margin="0,0,0,82">
+        <Label Content="PRUEBA CARGAR PELIS" VerticalAlignment="Center" Width="394" Height="62" HorizontalAlignment="Center" FontSize="36"/>
 
     </Grid>
 </Page>

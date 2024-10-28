@@ -23,7 +23,8 @@ namespace Practica01.model
             this.Usuarios = new List<Usuario> ();
             this.Usuario = null;
             for(int i = 1; i < 4; i++) {Salas.Add (new Sala (i));}
-            Usuarios.Add(new Usuario("email@prueba.com", "admin", "1234"));
+            Usuarios.Add(new Usuario("email@prueba.com", "admin", "1234", true));
+            Usuarios.Add(new Usuario("email2@prueba.com", "admin", "1234"));
 
           
         }
@@ -37,6 +38,10 @@ namespace Practica01.model
             if( u.email == correo && u.password == password) { this.Usuario = u; return true; } else { throw new ArgumentException("Credenciales incorrectas"); };
             
           
+        }
+        public bool isAdmin()
+        {
+            return Usuario.admin;
         }
         public Boolean valMail(String corroe)
         {
