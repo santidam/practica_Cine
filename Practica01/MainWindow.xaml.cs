@@ -21,21 +21,25 @@ namespace Practica01
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Controlador Controlador;
         public MainWindow()
         {
             InitializeComponent();
-            
-
-
+            this.Controlador = new Controlador();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+ 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if (Controlador.validUser(tbCorreo.Text, tbPass.Password)) { Menu_2 menu_2 = new Menu_2(Controlador,this); menu_2.Show(); this.Hide(); };
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
         }
     }

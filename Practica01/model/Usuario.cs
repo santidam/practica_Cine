@@ -8,16 +8,39 @@ namespace Practica01.model
 {
     public class Usuario
     {
-        private String correo {  get; set; }
-        private String nombre { get; set; }
-        private String password { get; set; }
+        private String Email {  get; set; }
+        public String email 
+        {
+            get {return Email;}
+            set {Email = value;}
+        }
+        private String Nombre { get; set; }
+        public String nombre 
+        {
+            get {  return Nombre;}
+            set {Nombre = value;}
+        }
+        private String Password { get; set; }
+        public String password 
+        {
+            get {return Password;}
+            set {Password = value;}
+        }
+        private bool Admin {  get; set; }
+        public bool admin 
+        {
+            get {  return Admin;}
+            set {Admin = value;}
+        }
 
         public Usuario(String correo, String nombre, String password)
         {
-            this.correo = correo;
-            this.nombre = nombre;
-            this.password = password;
+            this.Email = correo;
+            this.Nombre = nombre;
+            this.Password = password;
         }
+
+       
 
     }
 

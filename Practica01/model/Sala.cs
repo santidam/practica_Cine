@@ -8,7 +8,13 @@ namespace Practica01.model
 {
     public class Sala
     {
-        private int id;
-        private List<Pelicula> list;
+        private int Numero {  get; set; }
+        public int numero 
+        {
+            get {  return Numero; }
+            set { Numero = value; }
+        }
+
+        public Sala(int numero) { this.Numero = numero; }
     }
 }

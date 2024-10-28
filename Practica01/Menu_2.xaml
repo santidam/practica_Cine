@@ -1,0 +1,25 @@
+﻿<Window x:Class="Practica01.Menu_2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practica01"
+        mc:Ignorable="d"
+        Title="Menu_2" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="lbInicio" Content="Bienvenido a nuestro Cine !" HorizontalAlignment="Center" VerticalAlignment="Center" Width="444" FontWeight="Bold" FontFamily="Franklin Gothic Medium" FontSize="36"/>
+        <DockPanel Margin="0,0,0,368">
+            <Menu DockPanel.Dock="Top" HorizontalContentAlignment="Center">
+                <MenuItem x:Name="Menu_Inicio" Header="INICIO"  Height="65" Width="150" Click="Menu_Inicio_Click"/>
+                <MenuItem x:Name="Cargar_Peliculas" Header="CARGAR PELICULAS"  Height="65" Width="150" Click="Cargar_Peliculas_Click"/>
+                <MenuItem x:Name="Filtrar" Header="FILTRAR"  Height="67" Width="150" Click="Filtrar_Click"/>
+                <MenuItem x:Name="Creadores" Header="CREADORES"  Height="65" Width="150" Click="Creadores_Click"/>
+                <MenuItem x:Name="Salir" Header="SALIR" Width="auto" Click="Salir_Click"/>
+            </Menu>
+            <ContentControl x:Name="ContentArea" Width="798" Height="367"/>
+
+        </DockPanel>
+
+
+    </Grid>
+</Window>
