@@ -14,7 +14,7 @@
                 <MenuItem x:Name="Cargar_Peliculas" Header="CARGAR PELICULAS"  Height="65" Width="150" Click="Cargar_Peliculas_Click"/>
                 <MenuItem x:Name="Filtrar" Header="FILTRAR"  Height="67" Width="150" Click="Filtrar_Click"/>
                 <MenuItem x:Name="Creadores" Header="CREADORES"  Height="65" Width="150" Click="Creadores_Click"/>
-                <MenuItem x:Name="Salir" Header="SALIR" Width="auto" Click="Salir_Click"/>
+                <MenuItem x:Name="Salir" Header="SALIR" Width="150" Click="Salir_Click"/>
             </Menu>
             
         </DockPanel>

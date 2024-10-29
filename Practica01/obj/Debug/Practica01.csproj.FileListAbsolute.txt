@@ -19,3 +19,6 @@ C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\2.02.exe
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\2.02.pdb
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\Creditos.g.cs
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\Creditos.baml
+C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\Inicio.g.cs
+C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\Inicio.baml
+C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\App.baml

@@ -31,7 +31,7 @@ namespace Practica01
 
         private void Menu_Inicio_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(new Inicio(Controlador));
         }
 
         private void Cargar_Peliculas_Click(object sender, RoutedEventArgs e)

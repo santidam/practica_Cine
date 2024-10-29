@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,12 @@ namespace Practica01.model
     public class Controlador
     {
         private List<Pelicula> Peliculas {  get; set; }
-        private List<Usuario> Usuarios { get; set; }
+        private ObservableCollection<Usuario> Usuarios { get; set; }
+        public ObservableCollection<Usuario> Usuarios2
+        {
+            get {  return Usuarios; }
+            set { Usuarios = value; }
+        }
         private Usuario Usuario {  get; set; }
         private List<Sala> Salas {  get; set; }
 
@@ -20,11 +26,12 @@ namespace Practica01.model
         {
             this.Peliculas = new List<Pelicula> ();
             this.Salas = new List<Sala> ();
-            this.Usuarios = new List<Usuario> ();
+            this.Usuarios = new ObservableCollection<Usuario> ();
             this.Usuario = null;
             for(int i = 1; i < 4; i++) {Salas.Add (new Sala (i));}
             Usuarios.Add(new Usuario("email@prueba.com", "admin", "1234", true));
             Usuarios.Add(new Usuario("email2@prueba.com", "admin", "1234"));
+            
 
           
         }
