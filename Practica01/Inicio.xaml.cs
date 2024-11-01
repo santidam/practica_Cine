@@ -29,6 +29,20 @@ namespace Practica01
             this.DataContext = controlador;
         }
 
+        private void ModificarUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            int indice = dataGridPeliculas.SelectedIndex;
+            if (indice == -1)
+            {
+                MessageBox.Show("Debes seleccionar un elemento", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else { 
+                Usuario u = (Usuario)dataGridPeliculas.SelectedItem;
+                ModificarUsuarios mf = new ModificarUsuarios(this.Controlador, u, indice);
+                mf.ShowDialog();
 
+            }
+            
+        }
     }
 }

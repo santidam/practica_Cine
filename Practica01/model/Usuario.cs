@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Runtime.InteropServices.WindowsRuntime;
 
-namespace Practica01.model
+namespace Practica01.model 
 {
-    public class Usuario
+    public class Usuario : INotifyPropertyChanged, ICloneable
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private String Email {  get; set; }
         public String email 
         {
             get {return Email;}
-            set {Email = value;}
+            set {Email = value; PropertyChanged(this, new PropertyChangedEventArgs("email")); }
         }
         private String Nombre { get; set; }
         public String nombre 
@@ -48,8 +53,10 @@ namespace Practica01.model
             this.Admin = admin;
         }
 
-
-
+        public object Clone()
+        {
+            return this.MemberwiseClone() ;
+        }
     }
 
 }

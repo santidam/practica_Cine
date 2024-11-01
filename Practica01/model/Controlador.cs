@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
+using Practica01.DAO;
 
 namespace Practica01.model
 {
@@ -20,17 +21,21 @@ namespace Practica01.model
         }
         private Usuario Usuario {  get; set; }
         private List<Sala> Salas {  get; set; }
+        private UsuarioDAO UsuarioDAO { get; set; }
 
 
         public Controlador ()
         {
+            this.UsuarioDAO = new UsuarioDAO();
             this.Peliculas = new List<Pelicula> ();
             this.Salas = new List<Sala> ();
-            this.Usuarios = new ObservableCollection<Usuario> ();
+            this.Usuarios = UsuarioDAO.ObtenerUsuarios();
             this.Usuario = null;
             for(int i = 1; i < 4; i++) {Salas.Add (new Sala (i));}
-            Usuarios.Add(new Usuario("email@prueba.com", "admin", "1234", true));
-            Usuarios.Add(new Usuario("email2@prueba.com", "admin", "1234"));
+            //UsuarioDAO.InsertarUsuario(new Usuario("email@prueba.com", "admin", "1234", true));
+            //UsuarioDAO.InsertarUsuario(new Usuario("email2@prueba.com", "admin", "1234"));
+            //Usuarios.Add(new Usuario("email@prueba.com", "admin", "1234", true));
+            //Usuarios.Add(new Usuario("email2@prueba.com", "admin", "1234"));
             
 
           
@@ -86,6 +91,11 @@ namespace Practica01.model
         public bool reservarButaca(Pelicula pelicula, int n)
         {
             return pelicula.reservarButaca(n);
+        }
+
+        public void ModUserByIndex(Usuario u, int indice)
+        {
+            Usuarios[indice] = u;
         }
     }
 }

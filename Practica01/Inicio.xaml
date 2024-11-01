@@ -12,15 +12,18 @@
     <!-- Abre el contenedor Grid que estaba faltando -->
     <Grid>
         <DataGrid x:Name="dataGridPeliculas"
-          AutoGenerateColumns="False"
-          ItemsSource="{Binding Usuarios2}"
-          IsReadOnly="True"
-          HorizontalAlignment="Stretch"
-          VerticalAlignment="Stretch"
-          ColumnHeaderHeight="40"
-          RowHeight="30"
-          GridLinesVisibility="None"
-          AlternationCount="2">
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding Usuarios2}"
+                  IsReadOnly="True"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Top"
+                  Margin="10"
+                  ColumnHeaderHeight="40"
+                  RowHeight="30"
+                  GridLinesVisibility="None"
+                  AlternationCount="2"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow">
             <!-- Alternación de filas definida en el DataGrid -->
 
             <!-- Estilo de la cabecera -->
@@ -68,6 +71,11 @@
                 <DataGridTextColumn Header="Contraseña" Binding="{Binding password}" Width="*"  ElementStyle="{StaticResource CenteredCellStyle}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Modificar Usuario" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom" 
+                Margin="10"
+                Click="ModificarUsuario_Click"/>
 
     </Grid>
 </Page>

@@ -3,23 +3,66 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Practica01"
         mc:Ignorable="d"
-        Title="Menu_2" Height="450" Width="800">
-    <Grid>
-        <Label x:Name="lbInicio" Content="Bienvenido a nuestro Cine !" HorizontalAlignment="Center" VerticalAlignment="Center" Width="444" FontWeight="Bold" FontFamily="Franklin Gothic Medium" FontSize="36"/>
-        <DockPanel Margin="0,0,0,368">
-            <Menu DockPanel.Dock="Top" HorizontalContentAlignment="Center">
-                <MenuItem x:Name="Menu_Inicio" Header="INICIO"  Height="65" Width="150" Click="Menu_Inicio_Click"/>
-                <MenuItem x:Name="Cargar_Peliculas" Header="CARGAR PELICULAS"  Height="65" Width="150" Click="Cargar_Peliculas_Click"/>
-                <MenuItem x:Name="Filtrar" Header="FILTRAR"  Height="67" Width="150" Click="Filtrar_Click"/>
-                <MenuItem x:Name="Creadores" Header="CREADORES"  Height="65" Width="150" Click="Creadores_Click"/>
-                <MenuItem x:Name="Salir" Header="SALIR" Width="150" Click="Salir_Click"/>
-            </Menu>
-            
-        </DockPanel>
-        <Frame x:Name="Frame" Margin="0,66,0,0" NavigationUIVisibility="Hidden" Height="368" VerticalAlignment="Top"/>
+        Title="Menu" Height="450" Width="800"
+        Background="#FAFAFA">
+    <Window.Resources>
+        <!-- Estilo personalizado para MenuItem -->
+        <Style x:Key="MenuItemStyle" TargetType="MenuItem">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Background" Value="#4A90E2"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="MenuItem">
+                        <Border Background="{TemplateBinding Background}" 
+                            CornerRadius="5" 
+                            Padding="{TemplateBinding Padding}">
+                            <!-- Usa ContentPresenter para mostrar el Header -->
+                            <ContentPresenter ContentSource="Header" 
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#357ABD"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
 
+
+
+    <Grid>
+        <!-- Label de bienvenida estilizado -->
+        <Label x:Name="lbInicio" Content="Bienvenido a nuestro Cine!" 
+               HorizontalAlignment="Center" VerticalAlignment="Top" 
+               Margin="0,20,0,0" FontWeight="Bold" 
+               FontFamily="Franklin Gothic Medium" FontSize="36"
+               Foreground="#333333"/>
+
+        <!-- Contenedor para el menú con estilo moderno -->
+        <DockPanel VerticalAlignment="Top" Margin="0,80,0,0">
+            <Menu DockPanel.Dock="Top" HorizontalAlignment="Center">
+                <!-- Estilo personalizado para cada MenuItem -->
+                <MenuItem x:Name="Menu_Inicio" Header="INICIO" Width="150" Style="{StaticResource MenuItemStyle}" Click="Menu_Inicio_Click"/>
+                <MenuItem x:Name="Cargar_Peliculas" Header="CARGAR PELICULAS" Width="150" Style="{StaticResource MenuItemStyle}" Click="Cargar_Peliculas_Click"/>
+              <!--  <MenuItem x:Name="Filtrar" Header="FILTRAR" Width="150" Style="{StaticResource MenuItemStyle}" Click="Filtrar_Click"/> -->
+                <MenuItem x:Name="Creadores" Header="CREADORES" Width="150" Style="{StaticResource MenuItemStyle}" Click="Creadores_Click"/>
+                <MenuItem x:Name="Salir" Header="SALIR" Width="150" Style="{StaticResource MenuItemStyle}" Click="Salir_Click"/>
+            </Menu>
+        </DockPanel>
+
+        <!-- Frame para el contenido dinámico debajo del menú -->
+        <Frame x:Name="Frame" Margin="20,140,20,20" NavigationUIVisibility="Hidden" Background="White" />
 
     </Grid>
 </Window>
