@@ -36,7 +36,7 @@ namespace Practica01
 
         private void Cargar_Peliculas_Click(object sender, RoutedEventArgs e)
         {
-            ContentArea.Content= new Cargar_Peliculas();
+            ContentArea.Navigate(new Cargar_Peliculas());
         }
 
         private void Filtrar_Click(object sender, RoutedEventArgs e)

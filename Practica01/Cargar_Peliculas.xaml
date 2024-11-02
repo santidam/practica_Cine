@@ -8,8 +8,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Cargar_Peliculas">
 
-    <Grid HorizontalAlignment="Stretch" Height="NaN" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="NaN" Background="White">
-        <Label Content="PRUEBA CARGAR PELIS" HorizontalAlignment="Center" Margin="0,207,0,0" VerticalAlignment="Top" Width="176" Height="33"/>
+    <Grid HorizontalAlignment="Stretch" Width="798"  Height="367" Margin="0,0,0,0" VerticalAlignment="Stretch"  Background="White">
+        <Label Content="PRUEBA CARGAR PELIS" HorizontalAlignment="Center" VerticalAlignment="Center" Width="134" Height="33"/>
+        <DocumentViewer Margin="100,84,134,83"/>
 
     </Grid>
 </Page>
