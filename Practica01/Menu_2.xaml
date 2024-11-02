@@ -16,9 +16,10 @@
                 <MenuItem x:Name="Creadores" Header="CREADORES"  Height="65" Width="150" Click="Creadores_Click"/>
                 <MenuItem x:Name="Salir" Header="SALIR" Width="auto" Click="Salir_Click"/>
             </Menu>
-            <ContentControl x:Name="ContentArea" Width="798" Height="367"/>
+            
 
         </DockPanel>
+        <Frame x:Name="ContentArea" Width="798" NavigationUIVisibility="Hidden" Height="367" Margin="2,66,0,1"/>
 
 
     </Grid>
