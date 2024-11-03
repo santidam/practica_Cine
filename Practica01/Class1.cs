@@ -21,6 +21,10 @@ namespace Practica01
                 new Pelicula("El Mago de oz", 1, "Castellano", "15/10/2024", "23/12/2024", 203, "23:40", new string[] { "Fantasía", "Aventura" }),
                 new Pelicula("Wild Robot", 2, "Castellano", "15/10/2024", "23/12/2024", 127, "20:00", new string[] { "Animacion", "Fantasía", "Aventura" }),
                 new Pelicula("Wild Robot", 3, "Castellano", "15/10/2024", "23/12/2024", 127, "10:30", new string[] { "Animacion", "Fantasía", "Aventura" }),
+                new Pelicula("Wild Robot", 3, "Castellano", "15/10/2024", "23/12/2024", 127, "17:40", new string[] { "Animacion", "Fantasía", "Aventura" }),
+                new Pelicula("Wild Robot", 3, "Castellano", "15/10/2024", "23/12/2024", 127, "12:40", new string[] { "Animacion", "Fantasía", "Aventura" }),
+                new Pelicula("Wild Robot", 3, "Castellano", "15/10/2024", "23/12/2024", 127, "11:40", new string[] { "Animacion", "Fantasía", "Aventura" }),
+                new Pelicula("Wild Robot", 3, "Castellano", "15/10/2024", "23/12/2024", 127, "23:40", new string[] { "Animacion", "Fantasía", "Aventura" }),
             };
             
         }
