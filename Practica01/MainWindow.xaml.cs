@@ -1,5 +1,4 @@
-﻿using Practica01.model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +18,7 @@ namespace Practica01
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : VentanaBase
     {
         private Controlador Controlador;
         public MainWindow()
@@ -34,7 +33,7 @@ namespace Practica01
         {
             try
             {
-                if (Controlador.validUser(tbCorreo.Text, tbPass.Password)) { Menu_2 menu_2 = new Menu_2(Controlador,this); menu_2.Show(); this.Hide(); };
+                if (Controlador.validUser(tbCorreo.Text, tbPass.Password)) { Menu_2 menu_2 = new Menu_2(Controlador,this, new MostrarPeliculas()); menu_2.Show(); this.Hide(); };
             }
             catch (ArgumentException ex)
             {

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 
-namespace Practica01.model
+namespace Practica01
 {
     public class Controlador
     {
@@ -23,9 +23,10 @@ namespace Practica01.model
             this.Usuarios = new List<Usuario> ();
             this.Usuario = null;
             for(int i = 1; i < 4; i++) {Salas.Add (new Sala (i));}
-            Usuarios.Add(new Usuario("email@prueba.com", "admin", "1234"));
+            Usuarios.Add(new Usuario("admin@admin.com", "admin", "1234", true));
+            Usuarios.Add(new Usuario("user@user.com", "user", "1234", false));
 
-          
+
         }
         public Boolean validUser(String correo, String password) 
         {
@@ -71,9 +72,11 @@ namespace Practica01.model
         //    List<Pelicula> listaPeliculas = new List<Pelicula>();
         //    foreach (var i in Peliculas) { if(i.horario.Day.CompareTo(DateTime.Today)true) }
         public List<Pelicula> listaPeliculas() { return Peliculas; }
-        public bool reservarButaca(Pelicula pelicula, int n)
+
+        public bool isAdmin()
         {
-            return pelicula.reservarButaca(n);
+            return Usuario.admin;
         }
+
     }
 }

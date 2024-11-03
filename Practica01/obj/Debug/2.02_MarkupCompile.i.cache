@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\
+C:\Users\Oven\Desktop\practica_Cine\Practica01\obj\Debug\
 Practica01
 none
 false
 DEBUG;TRACE
-C:\Users\admin\source\repos\Practica01\Practica01\App.xaml
-4-216706479
+C:\Users\Oven\Desktop\practica_Cine\Practica01\App.xaml
+6-756018930
 
-14660983153
+171765764572
 13-1310406943
-Cargar_Peliculas.xaml;Creditos.xaml;MainWindow.xaml;Menu_2.xaml;
+CargarPeliculas.xaml;Creditos.xaml;MainWindow.xaml;Menu_2.xaml;MostrarPeliculas.xaml;PeliculaSeleccionada.xaml;
 
-False
+True
 

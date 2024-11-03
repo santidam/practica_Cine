@@ -55,9 +55,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Cargar_Peliculas.xaml">
-      <SubType>Designer</SubType>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Controlador.cs" />
+    <Compile Include="MostrarPeliculas.xaml.cs">
+      <DependentUpon>MostrarPeliculas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pelicula.cs" />
+    <Compile Include="PeliculaSeleccionada.xaml.cs">
+      <DependentUpon>PeliculaSeleccionada.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sala.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="CargarPeliculas.xaml.cs">
+      <DependentUpon>CargarPeliculas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaBase.cs" />
+    <Page Include="CargarPeliculas.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Creditos.xaml">
       <SubType>Designer</SubType>
@@ -71,9 +86,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Cargar_Peliculas.xaml.cs">
-      <DependentUpon>Cargar_Peliculas.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Creditos.xaml.cs">
       <DependentUpon>Creditos.xaml</DependentUpon>
     </Compile>
@@ -85,16 +97,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MostrarPeliculas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PeliculaSeleccionada.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Menu_2.xaml.cs">
       <DependentUpon>Menu_2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="model\Controlador.cs" />
-    <Compile Include="model\Sala.cs" />
-    <Compile Include="model\Usuario.cs" />
-    <Compile Include="model\Pelicula.cs" />
-    <Compile Include="model\Personajes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
