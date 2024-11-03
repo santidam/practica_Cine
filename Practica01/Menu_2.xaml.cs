@@ -1,6 +1,6 @@
-﻿using Practica01.model;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,31 +18,28 @@ namespace Practica01
     /// <summary>
     /// Lógica de interacción para Menu_2.xaml
     /// </summary>
-    public partial class Menu_2 : Window
+    public partial class Menu_2 : VentanaBase, INotifyPropertyChanged
     {
         private Controlador Controlador;
         private MainWindow MainWindow;
-        public Menu_2(Controlador controlador, MainWindow mainWindow)
+        private MostrarPeliculas MostrarPeliculas;
+        private Visibility _cargarPeliculasVisibility;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public Menu_2(Controlador controlador, MainWindow mainWindow, MostrarPeliculas mostrarPeliculas)
         {
             InitializeComponent();
+            this.MostrarPeliculas = mostrarPeliculas;
+            ContentArea.Navigate(MostrarPeliculas);
             this.Controlador = controlador;
             this.MainWindow = mainWindow;
+            this.DataContext =this;
+            bool isAdmin = CheckUserIsAdmin();
+            SetUserPermissions(isAdmin);
         }
 
-        private void Menu_Inicio_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Cargar_Peliculas_Click(object sender, RoutedEventArgs e)
-        {
-            ContentArea.Navigate(new Cargar_Peliculas());
-        }
-
-        private void Filtrar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+      
 
         private void Creadores_Click(object sender, RoutedEventArgs e)
         {
@@ -53,6 +50,41 @@ namespace Practica01
         {
             MainWindow.Show();
             this.Close();
+        }
+
+        private void Cargar_Peliculas_Click(object sender, RoutedEventArgs e)
+        {
+            if (Controlador.isAdmin()) { ContentArea.Navigate(new CargarPeliculas()); };
+
+        }
+
+        private void Menu_Inicio_Click(object sender, RoutedEventArgs e)
+        {
+            ContentArea.Navigate(MostrarPeliculas);
+        }
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public Visibility CargarPeliculasVisibility
+        {
+            get { return _cargarPeliculasVisibility; }
+            set
+            {
+                _cargarPeliculasVisibility = value;
+                OnPropertyChanged(nameof(CargarPeliculasVisibility));
+            }
+        }
+
+        public void SetUserPermissions(bool isAdmin)
+        {
+            CargarPeliculasVisibility = isAdmin ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private bool CheckUserIsAdmin()
+        {
+            return Controlador.isAdmin(); 
         }
     }
 }

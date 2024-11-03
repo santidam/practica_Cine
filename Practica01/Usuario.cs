@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practica01.model
+namespace Practica01
 {
     public class Usuario
     {
@@ -33,11 +33,12 @@ namespace Practica01.model
             set {Admin = value;}
         }
 
-        public Usuario(String correo, String nombre, String password)
+        public Usuario(String correo, String nombre, String password, Boolean admin)
         {
             this.Email = correo;
             this.Nombre = nombre;
             this.Password = password;
+            this.Admin = admin;
         }
 
        

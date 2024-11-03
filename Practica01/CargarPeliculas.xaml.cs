@@ -10,20 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Practica01
 {
     /// <summary>
-    /// Lógica de interacción para Cargar_Peliculas.xaml
+    /// Lógica de interacción para CargarPeliculas.xaml
     /// </summary>
-    public partial class Cargar_Peliculas : Page
+    public partial class CargarPeliculas : Page
     {
-        public Cargar_Peliculas()
+        public CargarPeliculas()
         {
             InitializeComponent();
-
         }
     }
 }
