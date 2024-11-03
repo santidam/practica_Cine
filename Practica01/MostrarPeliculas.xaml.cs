@@ -24,6 +24,8 @@ namespace Practica01
 
     {
         private string _textoPelicula;
+        private Frame frame;
+
 
         public string TextoPelicula
         {
@@ -35,9 +37,11 @@ namespace Practica01
             }
         }
 
-        public MostrarPeliculas()
+        public MostrarPeliculas(Frame frame)
         {
             InitializeComponent();
+            this.frame = frame;
+            DataContext = this;
         }
        
 
@@ -52,9 +56,9 @@ namespace Practica01
         {
             TextoPelicula = ((Button)sender).Content.ToString();
 
-            PeliculaSeleccionada peliculaSeleccionada = new PeliculaSeleccionada(this, TextoPelicula);
-            peliculaSeleccionada.Show();
             
+            frame.Navigate(new SeleccionarHorario(this, TextoPelicula, frame));
+           
 
         }
     }

@@ -24,14 +24,16 @@ namespace Practica01
         private MainWindow MainWindow;
         private MostrarPeliculas MostrarPeliculas;
         private Visibility _cargarPeliculasVisibility;
+        
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Menu_2(Controlador controlador, MainWindow mainWindow, MostrarPeliculas mostrarPeliculas)
+        public Menu_2(Controlador controlador, MainWindow mainWindow)
         {
             InitializeComponent();
-            this.MostrarPeliculas = mostrarPeliculas;
-            ContentArea.Navigate(MostrarPeliculas);
+            this.MostrarPeliculas = new MostrarPeliculas(ContentArea);
+            ContentArea.Navigate(MostrarPeliculas); //La pantalla inicial será MostrarPeliculas
             this.Controlador = controlador;
             this.MainWindow = mainWindow;
             this.DataContext =this;
@@ -60,7 +62,7 @@ namespace Practica01
 
         private void Menu_Inicio_Click(object sender, RoutedEventArgs e)
         {
-            ContentArea.Navigate(MostrarPeliculas);
+            ContentArea.Navigate(new MostrarPeliculas(ContentArea));
         }
         protected void OnPropertyChanged(string propertyName)
         {
@@ -85,6 +87,15 @@ namespace Practica01
         private bool CheckUserIsAdmin()
         {
             return Controlador.isAdmin(); 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            if (button.Tag is string currentTag && bool.TryParse(currentTag, out bool isToggled))
+            {
+                button.Tag = (!isToggled).ToString(); // Alterna entre "true" y "false"
+            }
         }
     }
 }

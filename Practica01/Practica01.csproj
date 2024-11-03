@@ -61,10 +61,13 @@
       <DependentUpon>MostrarPeliculas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pelicula.cs" />
-    <Compile Include="PeliculaSeleccionada.xaml.cs">
-      <DependentUpon>PeliculaSeleccionada.xaml</DependentUpon>
+    <Compile Include="ReservarButaca.xaml.cs">
+      <DependentUpon>ReservarButaca.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sala.cs" />
+    <Compile Include="SeleccionarHorario.xaml.cs">
+      <DependentUpon>SeleccionarHorario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs" />
     <Compile Include="CargarPeliculas.xaml.cs">
       <DependentUpon>CargarPeliculas.xaml</DependentUpon>
@@ -75,6 +78,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Creditos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionaries\ToggleButtonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -101,7 +108,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PeliculaSeleccionada.xaml">
+    <Page Include="ReservarButaca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SeleccionarHorario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

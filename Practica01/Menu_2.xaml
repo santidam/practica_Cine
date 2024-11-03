@@ -32,7 +32,7 @@
 
         </DockPanel>
         <Frame x:Name="ContentArea" NavigationUIVisibility="Hidden" Margin="0,83,0,-70" Grid.RowSpan="2"/>
-
+      
 
     </Grid>
 </local:VentanaBase>
