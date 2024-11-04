@@ -19,7 +19,7 @@ namespace Practica01
    
     public partial class SeleccionarHorario : Page
     {
-        //este comentario no sirve para nada
+        
         private string tituloSeleccionado;
         private Frame frame;
         private readonly ObservableCollection<Pelicula> listaPelis;
