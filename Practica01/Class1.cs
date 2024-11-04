@@ -25,6 +25,7 @@ namespace Practica01
                 new Pelicula("Wild Robot", 3, "Castellano", "15/10/2024", "23/12/2024", 127, "12:40", new string[] { "Animacion", "Fantasía", "Aventura" }),
                 new Pelicula("Wild Robot", 3, "Castellano", "15/10/2024", "23/12/2024", 127, "11:40", new string[] { "Animacion", "Fantasía", "Aventura" }),
                 new Pelicula("Wild Robot", 3, "Castellano", "15/10/2024", "23/12/2024", 127, "23:40", new string[] { "Animacion", "Fantasía", "Aventura" }),
+                new Pelicula("Wild Robot", 3, "Castellano", "15/10/2024", "23/12/2024", 127, "18:40", new string[] { "Animacion", "Fantasía", "Aventura" }),
             };
             
         }

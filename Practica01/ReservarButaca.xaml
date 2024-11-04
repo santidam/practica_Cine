@@ -10,9 +10,9 @@
 
     <Grid>
 
-        <TextBlock FontSize="40" TextAlignment="Center" HorizontalAlignment="Left" Text="PANTALLA" VerticalAlignment="Top" Height="56" Width="488" Margin="160,33,0,0" Background="#FF3E7E94" Foreground="White"/>
+        <TextBlock FontSize="40" TextAlignment="Center" HorizontalAlignment="Left" Text="PANTALLA" VerticalAlignment="Top" Height="56" Width="488" Margin="139,28,0,0" Background="#FF3E7E94" Foreground="White"/>
 
-        <WrapPanel Orientation="Horizontal" Margin="250,114,166,21">
+        <WrapPanel Name="toggleButtonWrapPanel" Orientation="Horizontal" Margin="224,114,192,21">
             <ToggleButton Margin="0, 0, 0, 30" Template="{DynamicResource ToggleButtonTemplate1}" x:Name="ToggleButton" Content="F:1 B:1" Width="100" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <ToggleButton Margin="0, 0, 0, 30" Template="{DynamicResource ToggleButtonTemplate1}" x:Name="ToggleButton2" Content="F:1 B:2" Width="100" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <ToggleButton Margin="0, 0, 0, 30" Template="{DynamicResource ToggleButtonTemplate1}" x:Name="ToggleButton3" Content="F:1 B:3" Width="100" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -25,7 +25,12 @@
 
 
         </WrapPanel>
-        <Button Background="#FFFF6767" FontSize="15" Content="COMPRAR" HorizontalAlignment="Left" Margin="622,272,0,0" VerticalAlignment="Top" Height="42" Width="120" Click="Button_Click" FontWeight="Bold" Foreground="Black"/>
+        <Button Background="#FFFF6767" FontSize="15" Content="COMPRAR" HorizontalAlignment="Left" Margin="564,272,0,0" VerticalAlignment="Top" Height="42" Width="120" Click="Btn_Comprar" FontWeight="Bold" Foreground="Black"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="156,114,0,0" VerticalAlignment="Top" Height="40" Width="47" BorderBrush="{x:Null}" Click="Volver_Atras">
+            <Button.Background>
+                <ImageBrush ImageSource="/566095.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Page>
