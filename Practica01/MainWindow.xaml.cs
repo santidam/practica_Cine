@@ -35,6 +35,7 @@ namespace Practica01
             {
                 
                 if (Controlador.validUser(tbCorreo.Text, tbPass.Password)) { Menu_2 menu_2 = new Menu_2(Controlador, this); menu_2.Show(); this.Hide(); };
+               
             }
             catch (ArgumentException ex)
             {

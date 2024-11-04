@@ -37,8 +37,8 @@ namespace Practica01
             this.Controlador = controlador;
             this.MainWindow = mainWindow;
             this.DataContext =this;
-            bool isAdmin = CheckUserIsAdmin();
-            SetUserPermissions(isAdmin);
+            SetUserPermissions(Controlador.isAdmin());
+            //Salas.ItemsSource = new List<Sala>(Controlador.Instance.Salas);
         }
 
       
@@ -56,7 +56,7 @@ namespace Practica01
 
         private void Cargar_Peliculas_Click(object sender, RoutedEventArgs e)
         {
-            if (Controlador.isAdmin()) { ContentArea.Navigate(new CargarPeliculas()); };
+            ContentArea.Navigate(new CargarPeliculas()); 
 
         }
 
@@ -84,18 +84,6 @@ namespace Practica01
             CargarPeliculasVisibility = isAdmin ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        private bool CheckUserIsAdmin()
-        {
-            return Controlador.isAdmin(); 
-        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Button button = sender as Button;
-            if (button.Tag is string currentTag && bool.TryParse(currentTag, out bool isToggled))
-            {
-                button.Tag = (!isToggled).ToString(); // Alterna entre "true" y "false"
-            }
-        }
     }
 }

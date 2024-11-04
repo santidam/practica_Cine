@@ -57,7 +57,7 @@ namespace Practica01
             TextoPelicula = ((Button)sender).Content.ToString();
 
             
-            frame.Navigate(new SeleccionarHorario(this, TextoPelicula, frame));
+            frame.Navigate(new SeleccionarHorario(this, frame));
            
 
         }

@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="Class1.cs" />
     <Compile Include="Controlador.cs" />
+    <Compile Include="FilaButacas.cs" />
     <Compile Include="MostrarPeliculas.xaml.cs">
       <DependentUpon>MostrarPeliculas.xaml</DependentUpon>
     </Compile>
@@ -145,6 +146,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="flecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="566095.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
