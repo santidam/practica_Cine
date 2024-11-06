@@ -8,6 +8,12 @@ namespace Practica01.model
 {
     public class Pelicula
     {
+        private int Id;
+        public int id
+        {
+            get { return Id; }
+            set { Id = value; }
+        }
         private String Titulo;
         public String titulo
         {
@@ -40,8 +46,8 @@ namespace Practica01.model
             get { return Fecha_final; }
             set {  Fecha_final = value; }
         }
-        private DateTime Horario { get; set; }
-        public DateTime horario
+        private TimeSpan Horario { get; set; }
+        public TimeSpan horario
         {
             get { return Horario; }
             set { Horario = value; }
@@ -67,10 +73,10 @@ namespace Practica01.model
             set { Sala = value; }
         }
 
-        public Pelicula(string titulo,String idioma, List<String> genero, DateTime fecha_inicio, DateTime fecha_final,DateTime horario, int duracion, Sala sala)
+        public Pelicula(string titulo,String idioma, List<String> genero, DateTime fecha_inicio, DateTime fecha_final,TimeSpan horario, int duracion, Sala sala)
         {
             this.Titulo = titulo;
-            this.Idioma = Idioma;
+            this.Idioma = idioma;
             this.Genero = genero;
             this.Fecha_inicio = fecha_inicio;
             this.Fecha_final = fecha_final;
@@ -78,6 +84,24 @@ namespace Practica01.model
             this.Duracion = duracion;
             this.Butacas = new List<bool>(new bool[9]);
             this.Sala = sala;
+        }
+
+        public Pelicula(int id, String titulo, String idioma, TimeSpan horario, Sala sala, List<bool> butacas) 
+        {
+            this.Id = id;
+            this.Titulo = titulo;
+            this.Idioma = idioma;
+            this.Horario = horario;
+            this.Sala = sala;
+            this.Butacas = butacas;
+        }
+        public Pelicula(String titulo) 
+        {
+            this.Titulo = titulo;
+        }
+        public Pelicula()
+        {
+            this.Butacas = new List<bool>(new bool[9]);
         }
 
         public bool reservarButaca(int n)

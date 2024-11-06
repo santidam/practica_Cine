@@ -3,14 +3,146 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Practica01"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Cargar_Peliculas">
+      d:DesignHeight="368" d:DesignWidth="800"
+      Title="Cargar_Peliculas"   >
+        
+    <Page.Resources>
+        <!-- Estilo Global para TextBox -->
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="0,5,0,15"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderBrush" Value="#B0BEC5"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Width" Value="300"/>
+        </Style>
 
-    <Grid HorizontalAlignment="Stretch" Width="798"  Height="367" Margin="0,0,0,0" VerticalAlignment="Stretch"  Background="White">
-        <Label Content="PRUEBA CARGAR PELIS" HorizontalAlignment="Center" VerticalAlignment="Center" Width="134" Height="33"/>
-        <DocumentViewer Margin="100,84,134,83"/>
+        <!-- Estilo Global para ComboBox -->
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="0,5,0,15"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderBrush" Value="#B0BEC5"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Width" Value="300"/>
+        </Style>
 
-    </Grid>
+        <!-- Estilo Global para DatePicker -->
+        <Style TargetType="DatePicker">
+            <Setter Property="Margin" Value="0,5,0,15"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderBrush" Value="#B0BEC5"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Width" Value="300"/>
+        </Style>
+
+        <!-- Estilo Global para Label -->
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#37474F"/>
+            <Setter Property="Margin" Value="0,15,0,5"/>
+        </Style>
+
+        <!-- Estilo Global para Botones -->
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+
+        <!-- Estilo para el Botón de Subir Archivo (Rojo) -->
+        <Style x:Key="RedButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="Red"/>
+        </Style>
+    </Page.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" >
+        <Grid Background="#FAFAFA" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Center">
+                <!-- Título -->
+                <Label Content="Título:"/>
+                <TextBox x:Name="txtTitulo" Text="{Binding titulo}"/>
+
+                <!-- Género -->
+                <Label Content="Géneros (hasta 3):"/>
+                <ListBox x:Name="lbGeneros" SelectionMode="Multiple" BorderBrush="#B0BEC5" BorderThickness="1" Height="80">
+                    <ListBoxItem Content="Acción"/>
+                    <ListBoxItem Content="Aventura"/>
+                    <ListBoxItem Content="Ciencia Ficción"/>
+                    <ListBoxItem Content="Comedia"/>
+                    <ListBoxItem Content="Documental"/>
+                    <ListBoxItem Content="Drama"/>
+                    <ListBoxItem Content="Fantasía"/>
+                    <ListBoxItem Content="Musical"/>
+                    <ListBoxItem Content="Suspense"/>
+                    <ListBoxItem Content="Terror"/>
+                </ListBox>
+
+                <!-- Idioma -->
+                <Label Content="Idioma:"/>
+                <ComboBox x:Name="cbIdioma">
+                    <ComboBoxItem Content="Inglés"/>
+                    <ComboBoxItem Content="Español"/>
+                </ComboBox>
+
+                <!-- Fecha de Inicio -->
+                <Label Content="Fecha de Inicio:"/>
+                <DatePicker x:Name="dpFechaInicio"/>
+
+                <!-- Fecha Final -->
+                <Label Content="Fecha Final:"/>
+                <DatePicker x:Name="dpFechaFinal"/>
+
+                <!-- Hora -->
+                <Label Content="Hora:"/>
+                <Grid Width="300">
+                    <TextBox x:Name="txtHora" GotFocus="RemovePlaceholder" LostFocus="ShowPlaceholder"/>
+                    <TextBlock x:Name="placeholderHora" Text="HH:mm" Foreground="Gray"  IsHitTestVisible="False" Margin="8,5,0,0" VerticalAlignment="Center"/>
+                </Grid>
+
+                <!-- Duración -->
+                <Label Content="Duración (min):"/>
+                <Grid Width="300">
+                    <TextBox x:Name="txtDuracion" GotFocus="RemovePlaceholder" LostFocus="ShowPlaceholder"/>
+                    <TextBlock x:Name="placeholderDuracion" Text="En minutos" Foreground="Gray" IsHitTestVisible="False" Margin="8,5,0,0" VerticalAlignment="Center"/>
+                </Grid>
+                
+                    <!-- Sala -->
+                <Label Content="Sala:"/>
+                <ComboBox x:Name="cbSala">
+                    <ComboBoxItem Content="1"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                </ComboBox>
+
+                <!-- Botones -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="Guardar" Click="Guardar_Click"/>
+                    <Button Content="Subir Archivo" Style="{StaticResource RedButtonStyle}" Click="SubirArchivo_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Page>

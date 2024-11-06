@@ -38,9 +38,17 @@ namespace Practica01.model
             this.Email = correo;
             this.Nombre = nombre;
             this.Password = password;
+            this.Admin = false;
+        }
+        public Usuario(String correo, String nombre, String password, bool admin)
+        {
+            this.Email = correo;
+            this.Nombre = nombre;
+            this.Password = password;
+            this.Admin = admin;
         }
 
-       
+
 
     }
 
