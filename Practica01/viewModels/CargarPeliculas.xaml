@@ -1,0 +1,49 @@
+﻿<Page x:Class="Practica01.viewModels.CargarPeliculas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practica01"
+        mc:Ignorable="d"
+        Title="CargarPeliculas" Height="370" Width="800">
+    <Grid Margin="0, 0, 0, 100">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+           
+        </Grid.RowDefinitions>
+       
+        <Label Content="Titulo" FontSize="20" HorizontalAlignment="Left" Margin="13,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-2.006"/>
+        <TextBox FontSize="20" HorizontalAlignment="Left" Margin="114,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+        <Label Grid.Column="1" Content="Sala" FontSize="20" HorizontalAlignment="Left" Margin="28,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-2.006"/>
+        <TextBox Grid.Column="1" FontSize="20" HorizontalAlignment="Left" Margin="114,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+        <Label Grid.Column="2" Content="Idioma" FontSize="20" HorizontalAlignment="Left" Margin="32,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-2.006"/>
+        <TextBox Grid.Column="2" FontSize="20" HorizontalAlignment="Left" Margin="114,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+        <Label Grid.Row="1" Content="Estreno" FontSize="20" HorizontalAlignment="Left" Margin="13,47,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-2.006"/>
+        <TextBox Grid.Row="1" FontSize="20" HorizontalAlignment="Left" Margin="114,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+        <Label Grid.Row="1" Grid.Column="1" Content="Fin" FontSize="20" HorizontalAlignment="Left" Margin="28,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-2.006"/>
+        <TextBox Grid.Row="1" Grid.Column="1" FontSize="20" HorizontalAlignment="Left" Margin="114,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+        <Label Grid.Row="1" Grid.Column="2" Content="Hora" FontSize="20" HorizontalAlignment="Left" Margin="32,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-2.006"/>
+        <TextBox Grid.Row="1" Grid.Column="2" FontSize="20" HorizontalAlignment="Left" Margin="114,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+        <Label Grid.Row="2" Content="Duracion" FontSize="20" HorizontalAlignment="Left" Margin="13,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-2.006"/>
+        <TextBox Grid.Row="2" FontSize="20" HorizontalAlignment="Left" Margin="114,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+        <Label Grid.Row="2" Grid.Column="1" Content="Género" FontSize="20" HorizontalAlignment="Left" Margin="28,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-2.006"/>
+        <TextBox Grid.Row="2" Grid.Column="1" FontSize="20" HorizontalAlignment="Left" Margin="114,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        
+        
+
+    </Grid>
+</Page>
