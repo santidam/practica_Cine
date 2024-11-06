@@ -5,6 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Practica01.models;
+using Practica01.controller;
+using Practica01.viewModels;
 
 namespace Practica01
 {
@@ -13,5 +16,6 @@ namespace Practica01
     /// </summary>
     public partial class App : Application
     {
+       
     }
 }

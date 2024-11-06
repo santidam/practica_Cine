@@ -55,38 +55,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Controlador.cs" />
-    <Compile Include="FilaButacas.cs" />
-    <Compile Include="MostrarPeliculas.xaml.cs">
+    <Compile Include="models\Class1.cs" />
+    <Compile Include="controller\Controlador.cs" />
+    <Compile Include="viewModels\MostrarPeliculas.xaml.cs">
       <DependentUpon>MostrarPeliculas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pelicula.cs" />
-    <Compile Include="ReservarButaca.xaml.cs">
+    <Compile Include="models\Pelicula.cs" />
+    <Compile Include="viewModels\ReservarButaca.xaml.cs">
       <DependentUpon>ReservarButaca.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sala.cs" />
-    <Compile Include="SeleccionarHorario.xaml.cs">
+    <Compile Include="models\Sala.cs" />
+    <Compile Include="viewModels\SeleccionarHorario.xaml.cs">
       <DependentUpon>SeleccionarHorario.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Usuario.cs" />
-    <Compile Include="CargarPeliculas.xaml.cs">
+    <Compile Include="models\Usuario.cs" />
+    <Compile Include="viewModels\CargarPeliculas.xaml.cs">
       <DependentUpon>CargarPeliculas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VentanaBase.cs" />
-    <Page Include="CargarPeliculas.xaml">
+    <Compile Include="models\VentanaBase.cs" />
+    <Page Include="viewModels\CargarPeliculas.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Creditos.xaml">
+    <Page Include="viewModels\Creditos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dictionaries\ToggleButtonStyle.xaml">
+    <Page Include="dictionaries\ToggleButtonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="viewModels\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -94,32 +93,32 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Creditos.xaml.cs">
+    <Compile Include="viewModels\Creditos.xaml.cs">
       <DependentUpon>Creditos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="viewModels\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Menu_2.xaml">
+    <Page Include="viewModels\Menu_2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MostrarPeliculas.xaml">
+    <Page Include="viewModels\MostrarPeliculas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ReservarButaca.xaml">
+    <Page Include="viewModels\ReservarButaca.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SeleccionarHorario.xaml">
+    <Page Include="viewModels\SeleccionarHorario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menu_2.xaml.cs">
+    <Compile Include="viewModels\Menu_2.xaml.cs">
       <DependentUpon>Menu_2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -147,11 +146,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Resource Include="flecha.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="566095.png" />
+    <Resource Include="images\566095.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
