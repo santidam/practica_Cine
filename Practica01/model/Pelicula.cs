@@ -52,12 +52,7 @@ namespace Practica01.model
             get { return Horario; }
             set { Horario = value; }
         }
-        private List<bool> Butacas { get; set; }
-        public List<bool> butacas 
-        {
-            get { return Butacas; }
-            set {  Butacas = value; }
-        }
+      
 
         private int Duracion {  get; set; }
         public int duracion 
@@ -82,18 +77,16 @@ namespace Practica01.model
             this.Fecha_final = fecha_final;
             this.Horario = horario;
             this.Duracion = duracion;
-            this.Butacas = new List<bool>(new bool[9]);
             this.Sala = sala;
         }
 
-        public Pelicula(int id, String titulo, String idioma, TimeSpan horario, Sala sala, List<bool> butacas) 
+        public Pelicula(int id, String titulo, String idioma, TimeSpan horario, Sala sala) 
         {
             this.Id = id;
             this.Titulo = titulo;
             this.Idioma = idioma;
             this.Horario = horario;
             this.Sala = sala;
-            this.Butacas = butacas;
         }
         public Pelicula(String titulo) 
         {
@@ -101,13 +94,9 @@ namespace Practica01.model
         }
         public Pelicula()
         {
-            this.Butacas = new List<bool>(new bool[9]);
+            
         }
 
-        public bool reservarButaca(int n)
-        {
-            if (Butacas[n] == false) { butacas[n] = true; return true; }
-            return false;
-        }
+      
     }
 }

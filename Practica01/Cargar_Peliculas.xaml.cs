@@ -130,7 +130,7 @@ namespace Practica01
             if (openFileDialog.ShowDialog() == true)
             {
                 string filePath = openFileDialog.FileName;
-                // Lógica para procesar el archivo subido
+                // Lógica para procesar el archivo subido pasarla al controlador despues de unificar
                 ObservableCollection<Pelicula>  newPeliculas= Reader.FileRead(filePath);
                 foreach (Pelicula pelicula in newPeliculas) {
                     PeliculaDAO.InsertarPelicula(pelicula);

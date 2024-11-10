@@ -74,9 +74,6 @@ namespace Practica01.model
         //    List<Pelicula> listaPeliculas = new List<Pelicula>();
         //    foreach (var i in Peliculas) { if(i.horario.Day.CompareTo(DateTime.Today)true) }
         public List<Pelicula> listaPeliculas() { return Peliculas; }
-        public bool reservarButaca(Pelicula pelicula, int n)
-        {
-            return pelicula.reservarButaca(n);
-        }
+     
     }
 }
