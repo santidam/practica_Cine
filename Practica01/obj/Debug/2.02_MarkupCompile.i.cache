@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\admin\Desktop\practica_Cine\Practica01\obj\Debug\
+C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\
 Practica01
 none
 false
 DEBUG;TRACE
-C:\Users\admin\Desktop\practica_Cine\Practica01\App.xaml
+C:\Users\admin\source\repos\Practica01\Practica01\App.xaml
 810112760
 
 181784302165
 13-1310406943
 viewModels\CargarPeliculas.xaml;viewModels\Creditos.xaml;dictionaries\ToggleButtonStyle.xaml;viewModels\MainWindow.xaml;viewModels\Menu_2.xaml;viewModels\MostrarPeliculas.xaml;viewModels\ReservarButaca.xaml;viewModels\SeleccionarHorario.xaml;
 
-False
+True
 
