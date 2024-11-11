@@ -58,8 +58,11 @@ namespace Practica01.viewModels
             }
             else
             {
-                MessageBoxResult res = MostrarConfirmacion(); 
-                frame.Navigate(new MostrarPeliculas(frame));
+                MessageBoxResult res = MostrarConfirmacion();
+                if (res == MessageBoxResult.Yes)
+                {
+                    frame.Navigate(new MostrarPeliculas(frame));
+                }
             }
 
         }

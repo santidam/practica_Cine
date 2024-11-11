@@ -85,7 +85,7 @@ namespace Practica01.viewModels
             if (clickedButton != null)
             {   
                 
-                Sala s = (Sala)clickedButton.Tag;
+               Sala s = (Sala)clickedButton.Tag;
                frame.Navigate(new ReservarButaca(this, frame, s));
 
             }

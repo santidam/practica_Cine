@@ -12,7 +12,6 @@ namespace Practica01.models
     public class Sala
     {
         private int numero {  get; set; }
-        
         private TimeSpan hora;
         private DateTime? dia;
         private String tituloPelicula;
@@ -30,7 +29,7 @@ namespace Practica01.models
 
         public override string ToString()
         {
-            return $"Sala {Numero}\nDia: {Dia}\nHora: {ObtenerHoraFormateada(Hora)}\nTitulo: {TituloPelicula}\t {string.Join(Environment.NewLine, disponibilidadAButacas)}";
+            return $"Sala {Numero}\nDia: {Dia}\nHora: {ObtenerHoraFormateada(Hora)}\nTitulo: {TituloPelicula}\t";
         }
 
         public string ObtenerHoraFormateada(TimeSpan hora)

@@ -8,16 +8,17 @@ namespace Practica01.models
 {
     public class Pelicula
     {
+        private int Id;
         private String Titulo;
         private int Sala;
         private String Idioma;
         private DateTime FechaInicio;
         private DateTime FechaFin;
-        private double Duracion;
+        private int Duracion;
         private TimeSpan HoraInicio;
         private String[] Generos;
 
-        public Pelicula(String Titulo, int Sala, String Idioma, DateTime FechaInicio, DateTime FechaFin, double Duracion, String HoraInicio, String[] Generos)
+        public Pelicula(String Titulo, int Sala, String Idioma, DateTime FechaInicio, DateTime FechaFin, int Duracion, String HoraInicio, String[] Generos)
         {
             this.Titulo = Titulo;
             this.Sala = Sala;
@@ -26,9 +27,8 @@ namespace Practica01.models
             this.FechaInicio = FechaInicio;
             this.Duracion = Duracion;
             this.HoraInicio = TimeSpan.Parse(HoraInicio);
-
-
             this.Generos = Generos;
+            //this.id = id
         }
 
        
@@ -59,7 +59,7 @@ namespace Practica01.models
             get { return FechaFin; }
             set { FechaFin = value; }
         }
-        public double duracion
+        public int duracion
         {
             get { return Duracion; }
             set { Duracion = value; }
