@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Practica01.model
 {
     public class Controlador
     {
-        private List<Pelicula> Peliculas {  get; set; }
+        public ObservableCollection<Pelicula> Peliculas { get; set; } 
         private List<Usuario> Usuarios { get; set; }
         private Usuario Usuario {  get; set; }
         private List<Sala> Salas {  get; set; }
@@ -18,7 +19,7 @@ namespace Practica01.model
 
         public Controlador ()
         {
-            this.Peliculas = new List<Pelicula> ();
+            this.Peliculas = getPeliculas();
             this.Salas = new List<Sala> ();
             this.Usuarios = new List<Usuario> ();
             this.Usuario = null;
@@ -70,10 +71,128 @@ namespace Practica01.model
         //{
         //    List<Pelicula> listaPeliculas = new List<Pelicula>();
         //    foreach (var i in Peliculas) { if(i.horario.Day.CompareTo(DateTime.Today)true) }
-        public List<Pelicula> listaPeliculas() { return Peliculas; }
+        public ObservableCollection<Pelicula> listaPeliculas() { return Peliculas; }
         public bool reservarButaca(Pelicula pelicula, int n)
         {
             return pelicula.reservarButaca(n);
+        }
+
+        //valentina
+        public ObservableCollection<Pelicula> getPeliculas()
+        {
+            return new ObservableCollection<Pelicula>
+            {
+               new Pelicula(
+                    "La aventura épica",
+                    "Español",
+                    new List<string> { "Aventura", "Acción" },
+                    new DateTime(2024, 11, 1),
+                    new DateTime(2024, 11, 30),
+                    new DateTime(2024, 11, 2, 19, 0, 0), 
+                    120,
+                    Salas[0]
+                ),
+                new Pelicula(
+                    "El misterio de la noche",
+                    "Inglés",
+                    new List<string> { "Misterio", "Suspenso" },
+                    new DateTime(2024, 11, 5),
+                    new DateTime(2024, 11, 20),
+                    new DateTime(2024, 11, 2, 21, 0, 0), 
+                    90,
+                    Salas[0]
+                ),
+                new Pelicula(
+                    "Comedia familiar",
+                    "Español",
+                    new List<string> { "Comedia", "Familiar" },
+                    new DateTime(2024, 11, 10),
+                    new DateTime(2024, 11, 25),
+                    new DateTime(2024, 11, 2, 17, 30, 0), 
+                    105,
+                    Salas[0]
+                ),
+                new Pelicula(
+                    "Titanic",
+                    "Español",
+                    new List<string> { "Comedia", "Familiar" },
+                    new DateTime(2024, 11, 10),
+                    new DateTime(2024, 11, 25),
+                    new DateTime(2024, 11, 2, 17, 30, 0),
+                    105,
+                    Salas[0]
+                ),
+                new Pelicula(
+                    "Up",
+                    "Español",
+                    new List<string> { "Comedia", "Familiar" },
+                    new DateTime(2024, 11, 10),
+                    new DateTime(2024, 11, 25),
+                    new DateTime(2024, 11, 2, 17, 30, 0),
+                    105,
+                    Salas[0]
+                ),
+                new Pelicula(
+                    "Pelicula 2",
+                    "Español",
+                    new List<string> { "Comedia", "Familiar" },
+                    new DateTime(2024, 11, 10),
+                    new DateTime(2024, 11, 25),
+                    new DateTime(2024, 11, 2, 17, 30, 0),
+                    105,
+                    Salas[0]
+                ),
+                new Pelicula(
+                    "Pelicula 3",
+                    "Español",
+                    new List<string> { "Comedia", "Familiar" },
+                    new DateTime(2024, 11, 10),
+                    new DateTime(2024, 11, 25),
+                    new DateTime(2024, 11, 2, 17, 30, 0),
+                    105,
+                    Salas[0]
+                ),
+                new Pelicula(
+                    "Pelicula 3",
+                    "Español",
+                    new List<string> { "Comedia", "Familiar" },
+                    new DateTime(2024, 11, 10),
+                    new DateTime(2024, 11, 25),
+                    new DateTime(2024, 11, 2, 17, 30, 0),
+                    105,
+                    Salas[0]
+                ),
+                new Pelicula(
+                    "Pelicula 3",
+                    "Español",
+                    new List<string> { "Comedia", "Familiar" },
+                    new DateTime(2024, 11, 10),
+                    new DateTime(2024, 11, 25),
+                    new DateTime(2024, 11, 2, 17, 30, 0),
+                    105,
+                    Salas[0]
+                ),
+                new Pelicula(
+                    "Pelicula 3",
+                    "Español",
+                    new List<string> { "Comedia", "Familiar" },
+                    new DateTime(2024, 11, 10),
+                    new DateTime(2024, 11, 25),
+                    new DateTime(2024, 11, 2, 17, 30, 0),
+                    105,
+                    Salas[0]
+                ),new Pelicula(
+                    "Pelicula 3",
+                    "Español",
+                    new List<string> { "Comedia", "Familiar" },
+                    new DateTime(2024, 11, 10),
+                    new DateTime(2024, 11, 25),
+                    new DateTime(2024, 11, 2, 17, 30, 0),
+                    105,
+                    Salas[0]
+                )
+            };
+            
         }
     }
 }

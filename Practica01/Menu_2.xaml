@@ -6,21 +6,42 @@
         xmlns:local="clr-namespace:Practica01"
         mc:Ignorable="d"
         Title="Menu_2" Height="450" Width="800">
-    <Grid>
-        <Label x:Name="lbInicio" Content="Bienvenido a nuestro Cine !" HorizontalAlignment="Center" VerticalAlignment="Center" Width="444" FontWeight="Bold" FontFamily="Franklin Gothic Medium" FontSize="36"/>
-        <DockPanel Margin="0,0,0,368">
-            <Menu DockPanel.Dock="Top" HorizontalContentAlignment="Center">
-                <MenuItem x:Name="Menu_Inicio" Header="INICIO"  Height="65" Width="150" Click="Menu_Inicio_Click"/>
-                <MenuItem x:Name="Cargar_Peliculas" Header="CARGAR PELICULAS"  Height="65" Width="150" Click="Cargar_Peliculas_Click"/>
-                <MenuItem x:Name="Filtrar" Header="FILTRAR"  Height="67" Width="150" Click="Filtrar_Click"/>
-                <MenuItem x:Name="Creadores" Header="CREADORES"  Height="65" Width="150" Click="Creadores_Click"/>
-                <MenuItem x:Name="Salir" Header="SALIR" Width="auto" Click="Salir_Click"/>
-            </Menu>
-            
+	<Grid>
+		<Border Background="#B22222" Height="50" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+			<TextBlock Text="FAZGORN CINES"
+                       Foreground="White"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+		</Border>
 
-        </DockPanel>
-        <Frame x:Name="ContentArea" Width="798" NavigationUIVisibility="Hidden" Height="367" Margin="2,66,0,1"/>
+		<DockPanel VerticalAlignment="Top" Margin="0,50,0,0" Height="40">
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="LightGray">
+				<Button Content="Cargar" Background="LightGray" MinWidth="100" MaxWidth="150" FontSize="16"/>
+				<Button Content="Películas" Background="LightGray" MinWidth="100" MaxWidth="150" FontSize="16"/>
+				<Button Content="Info App" Background="LightGray" MinWidth="100" MaxWidth="150" FontSize="16"/>
+			</StackPanel>
+		</DockPanel>
+		<StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,90,20,0" HorizontalAlignment="Right">
+			<Button Content="Filtrar" FontSize="16" FontWeight="Bold" Foreground="Gray" Background="Transparent" Click="Filtro_Click"/>
+		</StackPanel>
+		<ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20,120,20,20">
+			<ItemsControl ItemsSource="{Binding Peliculas}">
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<UniformGrid Columns="6" HorizontalAlignment="Center" VerticalAlignment="Center" />
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
 
-
-    </Grid>
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Button Width="100" Height="150" Margin="10" Content="{Binding titulo}"
+                                VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                BorderBrush="Black" BorderThickness="1" Background="White"/>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</ScrollViewer>
+	</Grid>
 </Window>
