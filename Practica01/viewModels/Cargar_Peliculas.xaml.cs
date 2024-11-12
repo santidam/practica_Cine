@@ -33,6 +33,7 @@ namespace Practica01.viewModels
             InitializeComponent();
             this.Pelicula = new Pelicula();
             this.DataContext = Pelicula;
+
             this.Controlador = Controlador.Instance;
         }
 
@@ -112,6 +113,9 @@ namespace Practica01.viewModels
                 }
             }
             catch (System.FormatException ex)
+            {
+                MessageBox.Show("Por favor, complete todos los campos en el formato correcto.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }catch (System.OverflowException es)
             {
                 MessageBox.Show("Por favor, complete todos los campos en el formato correcto.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }

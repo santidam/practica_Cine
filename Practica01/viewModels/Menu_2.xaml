@@ -31,7 +31,7 @@
 
 
         </DockPanel>
-        <Frame x:Name="ContentArea" NavigationUIVisibility="Hidden" Margin="0,83,0,-70" Grid.RowSpan="2"/>
+        <Frame x:Name="ContentArea" NavigationUIVisibility="Hidden" Margin="0,83,0,-70" Grid.RowSpan="2" Height="390" Width="800"/>
 
 
 
