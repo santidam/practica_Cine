@@ -74,5 +74,10 @@ namespace Practica01.viewModels
             TextoPelicula = ((Button)sender).Content.ToString();
             frame.Navigate(new SeleccionarHorario(this, frame));
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

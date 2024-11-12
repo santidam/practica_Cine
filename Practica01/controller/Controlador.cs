@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
+using Practica01.DAO2;
 using Practica01.models;
 using Practica01.viewModels;
 
@@ -22,20 +23,31 @@ namespace Practica01.controller
         private static readonly object _lock = new object();
 
         //private List<Pelicula> Peliculas {  get; set; }
+
+        private PeliculaDAO PeliculaDAO;
+
+        private UsuarioDAO UsuarioDAO;
+
+        private FileReader FileReader;
         private List<Usuario> Usuarios { get; set; }
         private Usuario Usuario {  get; set; }
         public HashSet<Sala> Salas {  get; set; }
+
         public ObservableCollection<Pelicula> pl; //de pruebas No tiene hace falta que sea un ObservableCollection
+        
         private PelisList pelis;
+
 
 
         public Controlador ()
         {
-            
+            this.PeliculaDAO = new PeliculaDAO();
+            this.UsuarioDAO = new UsuarioDAO();
+            this.FileReader = new FileReader();
             this.pelis = new PelisList(); //de pruebas
-            this.pl = pelis.OrdenarPeliculasPorHoraInicio();  // de pruebas
+            //this.pl = pelis.OrdenarPeliculasPorHoraInicio();  // de pruebas
 
-            //this.Peliculas = new List<Pelicula> ();
+            this.pl = new ObservableCollection<Pelicula> ();
             this.Salas = new HashSet<Sala>();
             this.Usuarios = new List<Usuario> ();
             this.Usuario = null;
@@ -86,7 +98,7 @@ namespace Practica01.controller
         public void OrdenarSalaPorHora()
         {
             // Ordenar las peliculas por Duracion
-            var salasOrdenadas = Salas.OrderBy(s => s.Hora).ToList();
+            var salasOrdenadas = Salas.OrderBy(s => s.hora).ToList();
             Salas.Clear();
             foreach (Sala s in salasOrdenadas)
             {
@@ -106,7 +118,7 @@ namespace Practica01.controller
         {
             foreach (Sala s in Salas)
             {
-                if(s.Numero == num && s.Hora == hora && s.Dia == dia)
+                if(s.numero == num && s.hora == hora && s.fecha == dia)
                 {
                     return s;
                 }
@@ -114,16 +126,48 @@ namespace Practica01.controller
             return null;
                
         }
-        public Pelicula getPeliculaByName(String nombre)
+        public List<Pelicula> getPeliculaByName(String nombre)
         {
-            foreach (var p in pl) { if(p.titulo.Equals(nombre)) return p; }
-            return null;
+            //foreach (var p in pl) { if(p.titulo.Equals(nombre)) return p; }
+            //return null;
+            return PeliculaDAO.ObtenerPeliculasByName(new Pelicula(nombre));
         }
 
         public Pelicula getPeliculaBy_TituloHoraSala(String titulo, TimeSpan hora, int numSala)
         {
-            foreach(Pelicula p in pl) { if (p.titulo.Equals(titulo) && p.horaInicio == hora && p.sala == numSala) return p; };
+            foreach(Pelicula p in pl) { if (p.titulo.Equals(titulo) && p.horaInicio == hora && p.sala.numero == numSala) return p; };
             return null;
+        }
+
+        //Añadiendo DAO GUI JORDI
+
+        public List<Pelicula> getPeliculasBy_TituloFecha(String titulo, DateTime fecha)
+        {
+            return PeliculaDAO.ObtenerPeliculasByName(new Pelicula(titulo,new Sala(0,fecha)));
+        }
+        public Pelicula getSesion(Pelicula p) 
+        {
+            Pelicula pelicula = PeliculaDAO.GetPeliculaInSesion(p);
+            if (pelicula == null) pelicula = p;
+            return pelicula;
+        }
+        public void AddSesion(Pelicula p) { PeliculaDAO.addSesion(p); }
+        public void UpdateSesion(Pelicula p ) { PeliculaDAO.ActualizarPelicula(p); }
+
+
+        // Cargando datos GUI SANTI
+        public void InsertPelicula(Pelicula p) 
+        {
+            PeliculaDAO.InsertarPelicula(p);
+        }
+
+        public void CargarPeliculasCSV(String file) 
+        {
+            ObservableCollection<Pelicula> peliculas = FileReader.FileRead(file);
+            foreach(Pelicula p in peliculas)
+            {
+                InsertPelicula (p);
+            }
         }
 
         //public List<Pelicula> getPeliculasDia()
@@ -132,7 +176,7 @@ namespace Practica01.controller
         //    foreach (var i in Peliculas) { if(i.horario.Day.CompareTo(DateTime.Today)true) }
 
 
-        
+
 
         //VALIDACIONES
 
@@ -140,12 +184,14 @@ namespace Practica01.controller
         {
             valMail(correo);
             valPassword(password);
-            Usuario u = findUser(correo);
+            Usuario u = UsuarioDAO.findUser(correo);
             if (u == null) throw new ArgumentException("El usuario no existe");
 
             if (u.email == correo && u.password == password) { this.Usuario = u; return true; } else { throw new ArgumentException("Credenciales incorrectas"); };
+
+
         }
-        
+
         public Boolean valMail(String corroe)
         {
             return true;

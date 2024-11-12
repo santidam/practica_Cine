@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\admin\source\repos\Practica01\Practica01\App.xaml
-810112760
+91735097076
 
-181784302165
-13-1310406943
-viewModels\CargarPeliculas.xaml;viewModels\Creditos.xaml;dictionaries\ToggleButtonStyle.xaml;viewModels\MainWindow.xaml;viewModels\Menu_2.xaml;viewModels\MostrarPeliculas.xaml;viewModels\ReservarButaca.xaml;viewModels\SeleccionarHorario.xaml;
+23-1948397129
+31-795433448
+viewModels\CargarPeliculas.xaml;viewModels\Cargar_Peliculas.xaml;viewModels\Creditos.xaml;dictionaries\ToggleButtonStyle.xaml;viewModels\MainWindow.xaml;viewModels\Menu_2.xaml;viewModels\MostrarPeliculas.xaml;viewModels\ReservarButaca.xaml;viewModels\SeleccionarHorario.xaml;
 
 True
 
