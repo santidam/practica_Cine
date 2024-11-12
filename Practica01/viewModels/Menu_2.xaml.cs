@@ -26,7 +26,7 @@ namespace Practica01.viewModels
         private MainWindow MainWindow;
         private MostrarPeliculas mostrarPeliculas;
         private Creditos creditos;
-        private CargarPeliculas cargarPeliculas;
+        private Cargar_Peliculas cargarPeliculas;
         private Visibility _cargarPeliculasVisibility;
         
         public event PropertyChangedEventHandler PropertyChanged;
@@ -46,7 +46,7 @@ namespace Practica01.viewModels
             // Instancias iniciales de las páginas
             this.mostrarPeliculas = new MostrarPeliculas(ContentArea);
             this.creditos = new Creditos();
-            this.cargarPeliculas = new CargarPeliculas();
+            this.cargarPeliculas = new Cargar_Peliculas();
 
             // Página inicial
             ContentArea.Navigate(MostrarPeliculas);
@@ -119,7 +119,7 @@ namespace Practica01.viewModels
             }
         }
 
-        public CargarPeliculas CargarPeliculas
+        public Cargar_Peliculas CargarPeliculas
         {
             get => cargarPeliculas;
             set

@@ -30,17 +30,19 @@ namespace Practica01.viewModels
     {
         private Frame frame;
         private Sala sala;
-        private ObservableCollection<int> butacasDisponibles;
+        private Pelicula Pelicula;
+        private int[] butacasDisponibles;
         private bool toggleButtonEnabled;
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ReservarButaca(SeleccionarHorario seleccionarHorario, Frame frame, Sala sala)
+        public ReservarButaca(SeleccionarHorario seleccionarHorario, Frame frame, Pelicula pelicula)
         {
             InitializeComponent();
             DataContext = seleccionarHorario;
             this.frame = frame;
-            this.sala = sala;
-            this.butacasDisponibles = sala.DisponibilidadButacas;
+            this.sala = pelicula.sala;
+            this.Pelicula = pelicula;
+            this.butacasDisponibles = pelicula.sala.disponibilidadButacas;
             EstadoSala();
         }
 
@@ -61,6 +63,8 @@ namespace Practica01.viewModels
                 MessageBoxResult res = MostrarConfirmacion();
                 if (res == MessageBoxResult.Yes)
                 {
+                    if (Pelicula.sala.id_sesion == 0) { Controlador.Instance.AddSesion(Pelicula); }
+                    if(Pelicula.sala.id_sesion != 0) { Controlador.Instance.UpdateSesion(Pelicula); }
                     frame.Navigate(new MostrarPeliculas(frame));
                 }
             }

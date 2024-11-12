@@ -46,26 +46,22 @@ namespace Practica01.viewModels
             if (mostrarPeliculasViewModel != null)
             {
                 DateTime? fechaSeleccionada = mostrarPeliculasViewModel.FechaSeleccionada;
+                if (!fechaSeleccionada.HasValue) { fechaSeleccionada = DateTime.Today; }
                
                 {
-                    foreach (Sala s in Controlador.Instance.Salas)
+                    foreach (Pelicula s in Controlador.Instance.getPeliculasBy_TituloFecha(Titulo.Text,(DateTime)fechaSeleccionada))
                     {
-                        Pelicula p = Controlador.Instance.getPeliculaBy_TituloHoraSala(s.TituloPelicula, s.Hora, s.Numero);
-
-
-
-                        if (s.Dia == fechaSeleccionada && fechaSeleccionada >= p.fechaInicio && fechaSeleccionada <= p.fechaFin && string.Equals(s.TituloPelicula.Trim(), Titulo.Text.Trim(), StringComparison.OrdinalIgnoreCase))
-                        {
+                        
                             
                             Button btn = new Button();
-                            btn.Content = ObtenerHoraFormateada(s.Hora) + "\nSala " + s.Numero;
+                            btn.Content = ObtenerHoraFormateada(s.horaInicio) + "\nSala " + s.sala.numero;
                             btn.Margin = new Thickness(20);
                             btn.Width = 100;
                             btn.Height = 70;
                             btn.Tag = s;
                             btn.Click += new RoutedEventHandler(Boton_Click);
                             HorariosStackPanel.Children.Add(btn);
-                        }
+                        
 
                     }
                 }
@@ -85,7 +81,7 @@ namespace Practica01.viewModels
             if (clickedButton != null)
             {   
                 
-               Sala s = (Sala)clickedButton.Tag;
+               Pelicula s = Controlador.Instance.getSesion((Pelicula)clickedButton.Tag);
                frame.Navigate(new ReservarButaca(this, frame, s));
 
             }
@@ -103,13 +99,13 @@ namespace Practica01.viewModels
             {
                 DateTime? fechaSeleccionada = mostrarPeliculasViewModel.FechaSeleccionada;
 
-                {
-                    foreach (Pelicula p in Controlador.Instance.pl)
-                    {
-                        Sala s = new Sala(p.sala, p.horaInicio, fechaSeleccionada, p.titulo);
-                        Controlador.Instance.addSala(s);
-                    }
-                }
+                //{
+                //    foreach (Pelicula p in Controlador.Instance.pl)
+                //    {
+                //        Sala s = new Sala(p.sala, p.horaInicio, fechaSeleccionada, p.titulo);
+                //        Controlador.Instance.addSala(s);
+                //    }
+                //}
             }
         }
     }

@@ -10,8 +10,8 @@
 
     <Grid>
         <Label FontSize="40" Content="MOSTRAR PELICULAS" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Margin="0,135,0,162"/>
-        <Button Content="Wild Robot" HorizontalAlignment="Left" Margin="67,213,0,0" VerticalAlignment="Top" Height="130" Width="102" Click="Button_Click"/>
-        <Button Content="Gladiator 2" HorizontalAlignment="Center" Margin="0,213,0,0" VerticalAlignment="Top" Height="130" Width="102"/>
+        <Button Content="Inception" HorizontalAlignment="Left" Margin="67,213,0,0" VerticalAlignment="Top" Height="130" Width="102" Click="Button_Click"/>
+        <Button Content="Gladiator 2" HorizontalAlignment="Center" Margin="0,213,0,0" VerticalAlignment="Top" Height="130" Width="102" Click="Button_Click_1"/>
         <Button Content="Vaina 2" HorizontalAlignment="Left" Margin="626,213,0,0" VerticalAlignment="Top" Height="130" Width="102"/>
         <DatePicker Name="Fecha" SelectedDate="{Binding FechaSeleccionada, Mode=TwoWay}" HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top"/>
         <TextBlock FontSize="30" HorizontalAlignment="Left" Margin="112,16,0,0" Text="{Binding ElementName=Fecha, Path=SelectedDate, StringFormat='{}{0:dd/MM/yyyy}'}" VerticalAlignment="Top" Height="47" Width="250"/>

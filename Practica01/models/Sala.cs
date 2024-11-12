@@ -11,25 +11,46 @@ namespace Practica01.models
 {
     public class Sala
     {
-        private int numero {  get; set; }
-        private TimeSpan hora;
-        private DateTime? dia;
-        private String tituloPelicula;
-        private ObservableCollection<int> disponibilidadAButacas;
+        private int Numero {  get; set; }
+        private TimeSpan Hora;
+        private DateTime Fecha;
+        private int[] DisponibilidadButacas;
+        private int Id_sala;
+        private int Id_sesion;
         
-        public Sala(int numero, TimeSpan hora, DateTime? dia, String tituloPelicula) { 
+
+        //Constructor incilizar butacas
+        public Sala(int numero, TimeSpan hora, DateTime dia) { 
             this.Numero = numero;
-            this.dia = dia;
-            this.hora = hora;
-            this.tituloPelicula = tituloPelicula;
-            this.disponibilidadAButacas = new ObservableCollection<int>{0,0,0,0,0,0,0,0,0};
+            this.Fecha = dia;
+            this.Hora = hora;
+            this.DisponibilidadButacas = new int[]{0,0,0,0,0,0,0,0,0};
         }
 
-       
+        public Sala(int numero, int id_sesion, int[] disponibilidadButacas, DateTime fecha)
+        {
+            this.Numero = numero;
+            this.Id_sesion = id_sesion;
+            this.DisponibilidadButacas = disponibilidadButacas;
+            this.Fecha = fecha;
+        }
+        public Sala(int numero, DateTime? fecha)
+        {
+            this.Numero = numero;
+            this.Fecha = (DateTime)fecha;
+            this.DisponibilidadButacas = new int []{ 0,0,0,0,0,0,0,0,0};
+        }
+        public Sala(int numero) 
+        {
+            this.Numero = numero; 
+        }
+
+
+
 
         public override string ToString()
         {
-            return $"Sala {Numero}\nDia: {Dia}\nHora: {ObtenerHoraFormateada(Hora)}\nTitulo: {TituloPelicula}\t";
+            return $"Sala {numero}\nDia: {fecha}\nHora: {ObtenerHoraFormateada(Hora)}\nTitulo: la sala no tiene pelicula has el toString en pelicula\t";
         }
 
         public string ObtenerHoraFormateada(TimeSpan hora)
@@ -41,7 +62,7 @@ namespace Practica01.models
         {
             if (obj is Sala other)
             {
-                return numero == other.Numero && hora == other.Hora && dia == other.Dia;
+                return numero == other.numero && Hora == other.Hora && Fecha == other.fecha;
             }
             return false;
         }
@@ -52,37 +73,41 @@ namespace Practica01.models
         {
             int hashNumero = Numero != null ? Numero.GetHashCode() : 0;
             int hashHora = Hora.GetHashCode();
-            int hashDia = Dia.GetHashCode();
+            int hashDia = fecha.GetHashCode();
 
 
             return hashNumero * 31 + hashHora + hashDia;
         }
 
-        public int Numero
+        public int id_sesion
         {
-            get { return numero; }
-            set { numero = value; }
-        }
-        public DateTime? Dia
-        {
-            get { return dia; }
-            set { dia = value; }
+            get { return Id_sesion; }
+            set { Id_sesion = value; }
+
         }
 
-        public TimeSpan Hora
+        public int numero
         {
-            get { return hora; }
-            set { hora = value; }
+            get { return Numero; }
+            set { Numero = value; }
+        }
+        public DateTime fecha
+        {
+            get { return Fecha; }
+            set { Fecha = value; }
         }
 
-        public String TituloPelicula
+        public TimeSpan hora
         {
-            get { return tituloPelicula; }
-            set { tituloPelicula = value; }
+            get { return Hora; }
+            set { Hora = value; }
         }
-        public ObservableCollection<int> DisponibilidadButacas
+
+     
+        public int[] disponibilidadButacas
         {
-            get { return disponibilidadAButacas; }
+            get { return DisponibilidadButacas; }
+            set { DisponibilidadButacas = value; }
         }
 
     }

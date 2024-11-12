@@ -10,28 +10,51 @@ namespace Practica01.models
     {
         private int Id;
         private String Titulo;
-        private int Sala;
+        private Sala Sala;
         private String Idioma;
         private DateTime FechaInicio;
         private DateTime FechaFin;
         private int Duracion;
-        private TimeSpan HoraInicio;
-        private String[] Generos;
+        private TimeSpan HoraInicio; 
+        private List<String> Generos;
 
-        public Pelicula(String Titulo, int Sala, String Idioma, DateTime FechaInicio, DateTime FechaFin, int Duracion, String HoraInicio, String[] Generos)
+        public Pelicula(string titulo, String idioma, List<String> generos, DateTime fecha_inicio, DateTime fecha_final, TimeSpan horario, int duracion, Sala sala)
         {
-            this.Titulo = Titulo;
-            this.Sala = Sala;
-            this.Idioma = Idioma;
-            this.FechaFin = FechaFin;
-            this.FechaInicio = FechaInicio;
-            this.Duracion = Duracion;
-            this.HoraInicio = TimeSpan.Parse(HoraInicio);
-            this.Generos = Generos;
+            this.Titulo = titulo;
+            this.Sala = sala;
+            this.Idioma = idioma;
+            this.FechaFin = fecha_final;
+            this.FechaInicio = fecha_inicio;
+            this.Duracion = duracion;
+            this.HoraInicio = horario;
+            this.Generos = generos;
             //this.id = id
         }
-
-       
+        public Pelicula(int id,string titulo, String idioma, TimeSpan horario, Sala sala)
+        {
+            this.Id = id;
+            this.Titulo = titulo;
+            this.Sala = sala;
+            this.Idioma = idioma;
+            this.HoraInicio = horario;
+            //this.id = id
+        }
+        public Pelicula(String titulo, Sala sala)
+        {
+            this.Titulo = titulo;
+            this.Sala= sala;
+        }
+        public Pelicula(String titulo)
+        {
+            this.Titulo = titulo;
+        }
+        public Pelicula() { }
+        
+        public int id 
+        {
+            get { return Id; }
+            set { Id = value; }
+        }
 
 
         public String titulo
@@ -39,7 +62,7 @@ namespace Practica01.models
             get { return Titulo; }
             set { Titulo = value; }
         }
-        public int sala
+        public Sala sala
         {
             get { return Sala; }
             set {Sala = value; }
@@ -69,7 +92,7 @@ namespace Practica01.models
             get { return HoraInicio; }
             set { HoraInicio = value; }
         }
-        public String[] generos
+        public List<String> generos
         {
             get { return Generos; }
             set { Generos = value; }
