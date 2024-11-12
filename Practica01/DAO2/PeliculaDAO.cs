@@ -209,6 +209,88 @@ namespace Practica01.DAO2
         //}
 
 
+
+        //Opcion 3 Para peliculas filtradas solo 1 titulo por coincidencia !!!!!
+
+        //public List<Pelicula> ObtenerPeliculasFiltradas(List<string> generosSeleccionados, List<string> idiomasSeleccionados, DateTime? fechaSeleccionada)
+        //{
+        //    var peliculas = new List<Pelicula>();
+
+        //    using (var connection = new NpgsqlConnection(_connectionString))
+        //    {
+        //        connection.Open();
+
+        //        // Base de la consulta SQL
+        //        var query = @"SELECT DISTINCT titulo 
+        //              FROM peliculas 
+        //              WHERE 1=1";  // 1=1 permite agregar condiciones dinámicamente
+
+        //        // Lista para parámetros
+        //        var parameters = new List<NpgsqlParameter>();
+
+        //        // Agregar filtro de fecha
+        //        if (fechaSeleccionada.HasValue)
+        //        {
+        //            query += " AND fecha_inicio <= @fecha AND fecha_final >= @fecha";
+        //            parameters.Add(new NpgsqlParameter("@fecha", fechaSeleccionada.Value));
+        //        }
+        //        else
+        //        {
+        //            fechaSeleccionada = DateTime.Today;
+        //            query += " AND fecha_inicio <= CURRENT_DATE AND fecha_final >= CURRENT_DATE";
+        //        }
+
+        //        // Agregar filtro de géneros si hay seleccionados
+        //        if (generosSeleccionados != null && generosSeleccionados.Count > 0)
+        //        {
+        //            query += " AND (";
+        //            for (int i = 0; i < generosSeleccionados.Count; i++)
+        //            {
+        //                if (i > 0) query += " OR ";
+        //                query += $"@genero{i} = ANY(genero)";
+        //                parameters.Add(new NpgsqlParameter($"@genero{i}", generosSeleccionados[i]));
+        //            }
+        //            query += ")";
+        //        }
+
+        //        // Agregar filtro de idiomas si hay seleccionados
+        //        if (idiomasSeleccionados != null && idiomasSeleccionados.Count > 0)
+        //        {
+        //            query += " AND (";
+        //            for (int i = 0; i < idiomasSeleccionados.Count; i++)
+        //            {
+        //                if (i > 0) query += " OR ";
+        //                query += $"idioma = @idioma{i}";
+        //                parameters.Add(new NpgsqlParameter($"@idioma{i}", idiomasSeleccionados[i]));
+        //            }
+        //            query += ")";
+        //        }
+
+        //        using (var command = new NpgsqlCommand(query, connection))
+        //        {
+        //            // Asignar todos los parámetros
+        //            foreach (var parameter in parameters)
+        //            {
+        //                command.Parameters.Add(parameter);
+        //            }
+
+        //            using (var reader = command.ExecuteReader())
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    peliculas.Add(new Pelicula
+        //                    (
+
+        //                        titulo: reader.GetString(0)
+
+        //                    ));
+        //                }
+        //            }
+        //        }
+        //    }
+
+        //    return peliculas;
+        //}
         // Insertar una nueva película
         public void InsertarPelicula(Pelicula pelicula)
         {
