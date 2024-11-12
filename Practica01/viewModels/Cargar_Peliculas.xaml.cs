@@ -115,6 +115,11 @@ namespace Practica01.viewModels
             {
                 MessageBox.Show("Por favor, complete todos los campos en el formato correcto.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+            catch (System.OverflowException ex)
+            {
+                MessageBox.Show("Por favor, complete todos los campos en el formato correcto.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
 
 
         }
