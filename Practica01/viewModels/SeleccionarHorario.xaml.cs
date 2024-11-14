@@ -49,20 +49,19 @@ namespace Practica01.viewModels
                 if (!fechaSeleccionada.HasValue) { fechaSeleccionada = DateTime.Today; }
                
                 {
-                    foreach (Pelicula s in Controlador.Instance.getPeliculasBy_TituloFecha(Titulo.Text,(DateTime)fechaSeleccionada))
+                    foreach (Pelicula p in Controlador.Instance.getPeliculasBy_TituloFecha(Titulo.Text,(DateTime)fechaSeleccionada))
                     {
                         
                             
                             Button btn = new Button();
-                            btn.Content = ObtenerHoraFormateada(s.horaInicio) + "\nSala " + s.sala.numero;
+                            btn.Content = ObtenerHoraFormateada(p.horaInicio) + "\nSala " + p.sala.numero;
                             btn.Margin = new Thickness(20);
                             btn.Width = 100;
                             btn.Height = 70;
-                            btn.Tag = s;
+                            btn.Tag = p;
                             btn.Click += new RoutedEventHandler(Boton_Click);
                             HorariosStackPanel.Children.Add(btn);
-                        
-
+                       
                     }
                 }
             }
@@ -81,8 +80,8 @@ namespace Practica01.viewModels
             if (clickedButton != null)
             {   
                 
-               Pelicula s = Controlador.Instance.getSesion((Pelicula)clickedButton.Tag);
-               frame.Navigate(new ReservarButaca(this, frame, s));
+               Pelicula p = Controlador.Instance.getSesion((Pelicula)clickedButton.Tag);
+               frame.Navigate(new ReservarButaca(this, frame, p));
 
             }
         }

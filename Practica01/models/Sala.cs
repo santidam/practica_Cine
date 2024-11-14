@@ -48,10 +48,7 @@ namespace Practica01.models
 
 
 
-        public override string ToString()
-        {
-            return $"Sala {numero}\nDia: {fecha}\nHora: {ObtenerHoraFormateada(Hora)}\nTitulo: la sala no tiene pelicula has el toString en pelicula\t";
-        }
+       
 
         public string ObtenerHoraFormateada(TimeSpan hora)
         {

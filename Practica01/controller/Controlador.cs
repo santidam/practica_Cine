@@ -138,7 +138,23 @@ namespace Practica01.controller
             foreach(Pelicula p in pl) { if (p.titulo.Equals(titulo) && p.horaInicio == hora && p.sala.numero == numSala) return p; };
             return null;
         }
+        //Añadiendo GUI Valentina
 
+        public List<Pelicula> GetPeliculasToday()
+        {
+            //Este metodo te daria las peliculas del dia
+
+            return PeliculaDAO.ObtenerPeliculasToday();
+        }
+        public List<Pelicula> GetPeliculasFiltradas(List<String> generos, List<String> idiomas, DateTime? fecha)
+        {
+            //Este metodo puede ajustarse, devuelve todas las pelis que cumplan el criterio pero podria
+            //devolver solo un peli con el nombre sin repetir ajustando la query dependiendo de lo que necesites
+            // -Hay 3 metodos de filtrado en el DAO, los otros estan comentados, si quieres solo 1 titulo por pelicula usa el
+            //metodo 3 !! solo tienes que comentar el de filtrado que descomentar el otro, se llaman igual : "ObtenerPeliculasFiltradas"
+
+            return PeliculaDAO.ObtenerPeliculasFiltradas(generos, idiomas, fecha);
+        }
         //Añadiendo DAO GUI JORDI
 
         public List<Pelicula> getPeliculasBy_TituloFecha(String titulo, DateTime fecha)

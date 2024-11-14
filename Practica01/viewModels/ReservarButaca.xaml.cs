@@ -29,7 +29,6 @@ namespace Practica01.viewModels
 
     {
         private Frame frame;
-        private Sala sala;
         private Pelicula Pelicula;
         private int[] butacasDisponibles;
         private bool toggleButtonEnabled;
@@ -40,7 +39,6 @@ namespace Practica01.viewModels
             InitializeComponent();
             DataContext = seleccionarHorario;
             this.frame = frame;
-            this.sala = pelicula.sala;
             this.Pelicula = pelicula;
             this.butacasDisponibles = pelicula.sala.disponibilidadButacas;
             EstadoSala();
@@ -74,7 +72,7 @@ namespace Practica01.viewModels
         public MessageBoxResult MostrarConfirmacion()
         {
             // Mostrar el mensaje de confirmación con botones Yes y No
-            MessageBoxResult resultado = MessageBox.Show("Resumen de Compra:\n\n" + this.sala.ToString(),
+            MessageBoxResult resultado = MessageBox.Show("Resumen de Compra:\n\n" + this.Pelicula.ToString(),
                                                          "Confirmación de compra",
                                                          MessageBoxButton.YesNo,
                                                          MessageBoxImage.Information);

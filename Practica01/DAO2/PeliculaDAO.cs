@@ -50,7 +50,7 @@ namespace Practica01.DAO2
             using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT id, titulo, idioma, horario, sala_id  FROM peliculas WHERE titulo = @titu AND fecha_inicio<= @fecha1 AND fecha_final >= @fecha2", connection))
+                using (var command = new NpgsqlCommand("SELECT id, titulo, idioma, horario, sala_id  FROM peliculas WHERE LOWER(titulo) = LOWER(@titu) AND fecha_inicio<= @fecha1 AND fecha_final >= @fecha2", connection))
                 {
                     command.Parameters.AddWithValue("titu",p.titulo);
                     command.Parameters.AddWithValue("fecha1",p.sala.fecha);
@@ -300,7 +300,7 @@ namespace Practica01.DAO2
                 using (var command = new NpgsqlCommand(@"INSERT INTO peliculas (titulo, idioma, genero, fecha_inicio, fecha_final, horario, duracion, sala_id) 
                                                      VALUES (@titulo, @idioma, @genero, @fecha_inicio, @fecha_final, @horario, @duracion, @sala_id)", connection))
                 {
-                    command.Parameters.AddWithValue("@titulo", pelicula.titulo);
+                    command.Parameters.AddWithValue("@titulo", pelicula.titulo.ToLower());
                     command.Parameters.AddWithValue("@idioma", pelicula.idioma );
                     command.Parameters.AddWithValue("@genero", pelicula.generos.ToArray() );
                     command.Parameters.AddWithValue("@fecha_inicio", pelicula.fechaInicio);
