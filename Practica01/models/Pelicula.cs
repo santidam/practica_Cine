@@ -97,7 +97,10 @@ namespace Practica01.models
             get { return Generos; }
             set { Generos = value; }
         }
+        public override string ToString()
+        {
+            return $"Sala {sala.numero}\nDia: {sala.fecha}\nHora: {sala.ObtenerHoraFormateada(horaInicio)}\nTitulo: {titulo}\t";
+        }
 
-        
     }
 }
