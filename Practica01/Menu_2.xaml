@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Menu_2" Height="450" Width="800">
 	<Grid>
+        <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
 		<Border Background="#B22222" Height="50" VerticalAlignment="Top" HorizontalAlignment="Stretch">
 			<TextBlock Text="FAZGORN CINES"
                        Foreground="White"
@@ -16,32 +17,12 @@
                        HorizontalAlignment="Center"/>
 		</Border>
 
-		<DockPanel VerticalAlignment="Top" Margin="0,50,0,0" Height="40">
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="LightGray">
-				<Button Content="Cargar" Background="LightGray" MinWidth="100" MaxWidth="150" FontSize="16"/>
-				<Button Content="Películas" Background="LightGray" MinWidth="100" MaxWidth="150" FontSize="16"/>
-				<Button Content="Info App" Background="LightGray" MinWidth="100" MaxWidth="150" FontSize="16"/>
-			</StackPanel>
-		</DockPanel>
-		<StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,90,20,0" HorizontalAlignment="Right">
-			<Button Content="Filtrar" FontSize="16" FontWeight="Bold" Foreground="Gray" Background="Transparent" Click="Filtro_Click"/>
-		</StackPanel>
-		<ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20,120,20,20">
-			<ItemsControl ItemsSource="{Binding Peliculas}">
-				<ItemsControl.ItemsPanel>
-					<ItemsPanelTemplate>
-						<UniformGrid Columns="6" HorizontalAlignment="Center" VerticalAlignment="Center" />
-					</ItemsPanelTemplate>
-				</ItemsControl.ItemsPanel>
-
-				<ItemsControl.ItemTemplate>
-					<DataTemplate>
-						<Button Width="100" Height="150" Margin="10" Content="{Binding titulo}"
-                                VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                                BorderBrush="Black" BorderThickness="1" Background="White"/>
-					</DataTemplate>
-				</ItemsControl.ItemTemplate>
-			</ItemsControl>
-		</ScrollViewer>
-	</Grid>
+        <DockPanel VerticalAlignment="Top" Margin="0,50,0,0" Height="40">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="LightGray">
+                <Button Content="Cargar" Background="LightGray" MinWidth="100" MaxWidth="150" FontSize="16"/>
+                <Button Content="Películas" Background="LightGray" MinWidth="100" MaxWidth="150" FontSize="16"/>
+                <Button Content="Info App" Background="LightGray" MinWidth="100" MaxWidth="150" FontSize="16"/>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
 </Window>

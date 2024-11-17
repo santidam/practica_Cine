@@ -11,7 +11,7 @@ namespace Practica01.model
 {
     public class Controlador
     {
-        public ObservableCollection<Pelicula> Peliculas { get; set; } 
+        public List<Pelicula> Peliculas { get; set; } 
         private List<Usuario> Usuarios { get; set; }
         private Usuario Usuario {  get; set; }
         private List<Sala> Salas {  get; set; }
@@ -19,14 +19,15 @@ namespace Practica01.model
 
         public Controlador ()
         {
-            this.Peliculas = getPeliculas();
             this.Salas = new List<Sala> ();
             this.Usuarios = new List<Usuario> ();
             this.Usuario = null;
             for(int i = 1; i < 4; i++) {Salas.Add (new Sala (i));}
             Usuarios.Add(new Usuario("email@prueba.com", "admin", "1234"));
 
-          
+            this.Peliculas = getPeliculas();
+
+
         }
         public Boolean validUser(String correo, String password) 
         {
@@ -71,16 +72,17 @@ namespace Practica01.model
         //{
         //    List<Pelicula> listaPeliculas = new List<Pelicula>();
         //    foreach (var i in Peliculas) { if(i.horario.Day.CompareTo(DateTime.Today)true) }
-        public ObservableCollection<Pelicula> listaPeliculas() { return Peliculas; }
+        public List<Pelicula> listaPeliculas() { return Peliculas; }
         public bool reservarButaca(Pelicula pelicula, int n)
         {
             return pelicula.reservarButaca(n);
         }
 
         //valentina
-        public ObservableCollection<Pelicula> getPeliculas()
+        public List<Pelicula> getPeliculas()
         {
-            return new ObservableCollection<Pelicula>
+
+            return new List<Pelicula>
             {
                new Pelicula(
                     "La aventura épica",
@@ -88,7 +90,7 @@ namespace Practica01.model
                     new List<string> { "Aventura", "Acción" },
                     new DateTime(2024, 11, 1),
                     new DateTime(2024, 11, 30),
-                    new DateTime(2024, 11, 2, 19, 0, 0), 
+                    new DateTime(2024, 11, 2, 19, 0, 0),
                     120,
                     Salas[0]
                 ),
@@ -98,7 +100,7 @@ namespace Practica01.model
                     new List<string> { "Misterio", "Suspenso" },
                     new DateTime(2024, 11, 5),
                     new DateTime(2024, 11, 20),
-                    new DateTime(2024, 11, 2, 21, 0, 0), 
+                    new DateTime(2024, 11, 2, 21, 0, 0),
                     90,
                     Salas[0]
                 ),
@@ -108,7 +110,7 @@ namespace Practica01.model
                     new List<string> { "Comedia", "Familiar" },
                     new DateTime(2024, 11, 10),
                     new DateTime(2024, 11, 25),
-                    new DateTime(2024, 11, 2, 17, 30, 0), 
+                    new DateTime(2024, 11, 2, 17, 30, 0),
                     105,
                     Salas[0]
                 ),
@@ -192,7 +194,7 @@ namespace Practica01.model
                     Salas[0]
                 )
             };
-            
+
         }
     }
 }

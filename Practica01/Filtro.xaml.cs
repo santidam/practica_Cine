@@ -21,6 +21,10 @@ namespace Practica01
     {
         public List<string> generosFiltro { get; private set; } = new List<string>();
         public List<string> idiomasFiltro { get; private set; } = new List<string>();
+        public DateTime? FechaFiltro
+        {
+            get { return fechaPicker.SelectedDate; }
+        }
         public Filtro()
         {
             InitializeComponent();
@@ -32,8 +36,15 @@ namespace Practica01
             if (comedia.IsChecked == true) generosFiltro.Add("Comedia");
             if (suspenso.IsChecked == true) generosFiltro.Add("Suspenso");
             if (aventura.IsChecked == true) generosFiltro.Add("Aventura");
-            if (ingles.IsChecked == true) idiomasFiltro.Add("Ingles");
-            if (español.IsChecked == true) idiomasFiltro.Add("Español");
+            if (doc.IsChecked == true) generosFiltro.Add("Documental");
+            if (drama.IsChecked == true) generosFiltro.Add("Drama");
+            if (fantasia.IsChecked == true) generosFiltro.Add("Fantasía");
+            if (musical.IsChecked == true) generosFiltro.Add("Musical");
+            if (terror.IsChecked == true) generosFiltro.Add("Terror");
+            if (cf.IsChecked == true) generosFiltro.Add("Ciencia Ficción");
+
+            if (original.IsChecked == true) idiomasFiltro.Add("Version Original");
+            if (cast.IsChecked == true) idiomasFiltro.Add("Castellano");
 
             this.DialogResult = true; 
             this.Close();

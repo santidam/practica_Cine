@@ -5,24 +5,97 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Practica01"
         mc:Ignorable="d"
-        Title="Window1" Height="400" Width="600">
+        Title="Filtro" Height="400" Width="600" Background="LightGray">
+    <Window.Resources>
+        <Style TargetType="CheckBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="16" Height="16" BorderThickness="2" 
+                                    CornerRadius="3" 
+                                    BorderBrush="Red" 
+                                Background="{TemplateBinding Background}">
+                                <Grid>
+                                    <Rectangle x:Name="CheckMark" Visibility="Collapsed" 
+                                               Fill="White" 
+                                        Margin="2"/>
+                                </Grid>
+                            </Border>
+                            <ContentPresenter Margin="4,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <StackPanel Margin="10">
+        <StackPanel Margin="0,10,0,10" HorizontalAlignment="Center" Width="580">
             <TextBlock Text="Género" FontWeight="Bold" FontSize="16"/>
-            <UniformGrid Columns="4" Margin="0,10,0,10">
+            <UniformGrid Columns="4" Margin="0,10,0,10" Height="80" Width="548">
                 <CheckBox Content="Acción" Name="accion" />
                 <CheckBox Content="Comedia" Name="comedia" />
                 <CheckBox Content="Suspenso" Name="suspenso" />
                 <CheckBox Content="Aventura" Name="aventura" />
+                <CheckBox Content="Documental" Name="doc" />
+                <CheckBox Content="Drama" Name="drama" />
+                <CheckBox Content="Fantasía" Name="fantasia" />
+                <CheckBox Content="Musical" Name="musical" />
+                <CheckBox Content="Terror" Name="terror" />
+                <CheckBox Content="Ciencia Ficcion" Name="cf" />
             </UniformGrid>
 
             <TextBlock Text="Idioma" FontWeight="Bold" FontSize="16"/>
-            <UniformGrid Columns="4" Margin="0,10,0,20">
-                <CheckBox Content="Español" Name="español" />
-                <CheckBox Content="Inglés" Name="ingles" />
+            <UniformGrid Columns="4" Margin="14,10,0,20">
+                <CheckBox Content="Version Original" Name="original" />
+                <CheckBox Content="Castellano" Name="cast" />
             </UniformGrid>
 
-            <Button Content="Aplicar" HorizontalAlignment="Right" Click="AplicarFiltro" />
+            <TextBlock Text="Fecha" FontWeight="Bold" FontSize="16"/>
+            <DatePicker x:Name="fechaPicker" Width="340" Height="24" HorizontalAlignment="Left" Margin="13,10,0,0"/>
+
+            <Button Content="Aplicar" Click="AplicarFiltro" Height="40" Width="90" HorizontalAlignment="Right" Margin="0,30,20,0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Border x:Name="ButtonBorder" 
+                                    CornerRadius="8" 
+                                    Background="white" 
+                                    BorderThickness="2" 
+                                    BorderBrush="Red"
+                                    >
+                                            <Border.Effect>
+                                                <DropShadowEffect BlurRadius="10" ShadowDepth="3" Color="Gray"/>
+                                            </Border.Effect>
+                                        </Border>
+    
+                                        <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center" 
+                                              TextBlock.FontWeight="Bold" 
+                                              TextBlock.FontSize="16"/>
+                                    </Grid>
+
+                                    <ControlTemplate.Triggers>
+                                        <!-- Cambio de color al presionar -->
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="ButtonBorder" Property="Background" Value="Red"/>
+                                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="Red"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>

@@ -24,16 +24,15 @@ namespace Practica01
     {
         private Controlador Controlador;
         private MainWindow MainWindow;
-        public ObservableCollection<Pelicula> peliculas { get; set; }
 
         public Menu_2(Controlador controlador, MainWindow mainWindow)
         {
             InitializeComponent();
             this.Controlador = controlador;
             this.MainWindow = mainWindow;
-            peliculas = Controlador.getPeliculas();
-            DataContext = this;
-            Controlador.getPeliculas();
+            Inicio cargarPeliculas = new Inicio(controlador);
+            MainFrame.Navigate(cargarPeliculas);
+
         }
 
         private void Menu_Inicio_Click(object sender, RoutedEventArgs e)
@@ -58,23 +57,7 @@ namespace Practica01
             this.Close();
         }
 
-        private void Filtro_Click(object sender, RoutedEventArgs e)
-        {
-            Filtro filtrar = new Filtro();
-            if (filtrar.ShowDialog() == true) {
-                var peliculasFiltradas = Controlador.listaPeliculas()
-            .Where(pelicula =>
-                (filtrar.generosFiltro.Count == 0 || pelicula.genero.Any(g => filtrar.generosFiltro.Contains(g))) &&
-                (filtrar.idiomasFiltro.Count == 0 || filtrar.idiomasFiltro.Contains(pelicula.idioma))
-            )
-            .ToList();
-                peliculas.Clear();
-                foreach (var pelicula in peliculasFiltradas)
-                {
-                    peliculas.Add(pelicula);
-                }
-            }
-        }
+        
         
     }
 }
