@@ -53,7 +53,7 @@
             <TextBlock Text="Idioma" FontWeight="Bold" FontSize="16"/>
             <UniformGrid Columns="4" Margin="14,10,0,20">
                 <CheckBox Content="Version Original" Name="original" />
-                <CheckBox Content="Castellano" Name="cast" />
+                <CheckBox Content="Español" Name="cast" />
             </UniformGrid>
 
             <TextBlock Text="Fecha" FontWeight="Bold" FontSize="16"/>
@@ -84,7 +84,6 @@
                                     </Grid>
 
                                     <ControlTemplate.Triggers>
-                                        <!-- Cambio de color al presionar -->
                                         <Trigger Property="IsPressed" Value="True">
                                             <Setter TargetName="ButtonBorder" Property="Background" Value="Red"/>
                                             <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="Red"/>

@@ -44,7 +44,7 @@ namespace Practica01
             if (cf.IsChecked == true) generosFiltro.Add("Ciencia Ficción");
 
             if (original.IsChecked == true) idiomasFiltro.Add("Version Original");
-            if (cast.IsChecked == true) idiomasFiltro.Add("Castellano");
+            if (cast.IsChecked == true) idiomasFiltro.Add("Español");
 
             this.DialogResult = true; 
             this.Close();
