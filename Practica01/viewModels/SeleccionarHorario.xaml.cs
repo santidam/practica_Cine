@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Practica01.models;
 using Practica01.controller;
+using Microsoft.SqlServer.Server;
+using System.Globalization;
 
 namespace Practica01.viewModels
 {
@@ -28,7 +30,7 @@ namespace Practica01.viewModels
         private String titulo;
         
 
-        public SeleccionarHorario(MostrarPeliculas mostrarPeliculas, Frame frame)
+        public SeleccionarHorario(InicioPeliculas mostrarPeliculas, Frame frame)
         {
             InitializeComponent();
             DataContext = mostrarPeliculas;
@@ -42,10 +44,13 @@ namespace Practica01.viewModels
         {
             
             HorariosStackPanel.Children.Clear();
-            var mostrarPeliculasViewModel = DataContext as MostrarPeliculas;
+            var mostrarPeliculasViewModel = DataContext as InicioPeliculas;
             if (mostrarPeliculasViewModel != null)
+
             {
-                DateTime? fechaSeleccionada = mostrarPeliculasViewModel.FechaSeleccionada;
+                string formato = "dd 'de' MMMM 'de' yyyy";
+                DateTime? fechaSeleccionada  = DateTime.ParseExact(mostrarPeliculasViewModel.fechaAct.Name, formato, new CultureInfo("es-ES"));
+                MessageBox.Show(fechaSeleccionada.ToString());
                 if (!fechaSeleccionada.HasValue) { fechaSeleccionada = DateTime.Today; }
                
                 {

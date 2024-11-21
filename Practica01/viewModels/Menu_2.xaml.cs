@@ -24,7 +24,7 @@ namespace Practica01.viewModels
     {
         private Controlador Controlador;
         private MainWindow MainWindow;
-        private MostrarPeliculas mostrarPeliculas;
+        private InicioPeliculas mostrarPeliculas;
         private Creditos creditos;
         private Cargar_Peliculas cargarPeliculas;
         private Visibility _cargarPeliculasVisibility;
@@ -44,7 +44,7 @@ namespace Practica01.viewModels
             this.DataContext = this;
 
             // Instancias iniciales de las páginas
-            this.mostrarPeliculas = new MostrarPeliculas(ContentArea);
+            this.mostrarPeliculas = new InicioPeliculas();
             this.creditos = new Creditos();
             this.cargarPeliculas = new Cargar_Peliculas();
 
@@ -99,7 +99,7 @@ namespace Practica01.viewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public MostrarPeliculas MostrarPeliculas
+        public InicioPeliculas MostrarPeliculas
         {
             get => mostrarPeliculas;
             set

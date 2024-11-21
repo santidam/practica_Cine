@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\valen\Desktop\Practica\practica_Cine\Practica01\obj\Debug\
+C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\
 Practica01
 none
 false
 DEBUG;TRACE
-C:\Users\valen\Desktop\Practica\practica_Cine\Practica01\App.xaml
+C:\Users\admin\source\repos\Practica01\Practica01\App.xaml
 11-1749638715
 
 25-2027821966
-31-985289542
+31-795433448
 viewModels\CargarPeliculas.xaml;viewModels\Cargar_Peliculas.xaml;viewModels\Creditos.xaml;dictionaries\ToggleButtonStyle.xaml;viewModels\Filtro.xaml;viewModels\InicioPeliculas.xaml;viewModels\MainWindow.xaml;viewModels\Menu_2.xaml;viewModels\MostrarPeliculas.xaml;viewModels\ReservarButaca.xaml;viewModels\SeleccionarHorario.xaml;
 
 True
