@@ -8,5 +8,32 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Creditos">
 
-    <Grid Background="White"/>
+    <Grid Margin="20" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" VerticalAlignment="Center">
+            <TextBlock Text="Creadores" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Foreground="#444" 
+                       HorizontalAlignment="Center" 
+                       Margin="0,0,0,20"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Santiago" FontSize="18" Margin="20,0"/>
+                <TextBlock Text="Valentina" FontSize="18" Margin="20,0"/>
+                <TextBlock Text="Jordi" FontSize="18" Margin="20,0"/>
+            </StackPanel>
+            
+        </StackPanel>
+
+        <TextBlock Grid.Row="1" 
+                   Text="Versión de la app: 1.0" 
+                   FontSize="14" 
+                   Foreground="#666" 
+                   HorizontalAlignment="Center" 
+                   Margin="0,20"/>
+    </Grid>
 </Page>

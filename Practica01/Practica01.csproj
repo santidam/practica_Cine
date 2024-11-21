@@ -113,6 +113,12 @@
     <Compile Include="viewModels\Cargar_Peliculas.xaml.cs">
       <DependentUpon>Cargar_Peliculas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="viewModels\Filtro.xaml.cs">
+      <DependentUpon>Filtro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="viewModels\InicioPeliculas.xaml.cs">
+      <DependentUpon>InicioPeliculas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="viewModels\MostrarPeliculas.xaml.cs">
       <DependentUpon>MostrarPeliculas.xaml</DependentUpon>
     </Compile>
@@ -142,6 +148,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="dictionaries\ToggleButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="viewModels\Filtro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="viewModels\InicioPeliculas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

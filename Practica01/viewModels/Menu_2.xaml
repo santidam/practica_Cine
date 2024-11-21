@@ -13,7 +13,7 @@
             <RowDefinition Height="Auto"/>
             <!-- Fila para el DockPanel -->
         </Grid.RowDefinitions>
-        <Label Foreground="White"  FontFamily="Times new Roman" Background="#b00" Grid.Row="0" FontSize="20" Content="FAZGORN CINES" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,361"/>
+        <Label Foreground="White"  FontFamily="Times new Roman" Background="#B22222" Grid.Row="0" FontSize="20" Content="FAZGORN CINES" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,361"/>
         <DockPanel  Margin="0,47,0,324">
             <Menu VerticalContentAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.497,2.139" Height="36">
                 <Menu.ItemsPanel>
