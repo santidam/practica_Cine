@@ -12,6 +12,15 @@ namespace Practica01.DAO2
         {
             return DateTime.Today.Add(time);
         }
+
+        public static string Capitalize(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return input;
+
+            return char.ToUpper(input[0]) + input.Substring(1).ToLower();
+        }
     }
+
 
 }

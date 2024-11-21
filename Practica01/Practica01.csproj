@@ -119,9 +119,6 @@
     <Compile Include="viewModels\InicioPeliculas.xaml.cs">
       <DependentUpon>InicioPeliculas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="viewModels\MostrarPeliculas.xaml.cs">
-      <DependentUpon>MostrarPeliculas.xaml</DependentUpon>
-    </Compile>
     <Compile Include="models\Pelicula.cs" />
     <Compile Include="viewModels\ReservarButaca.xaml.cs">
       <DependentUpon>ReservarButaca.xaml</DependentUpon>
@@ -175,10 +172,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="viewModels\Menu_2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="viewModels\MostrarPeliculas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -9,17 +9,9 @@
       Title="InicioPeliculas">
 
     <Grid>
-        <Border Background="#B22222" Height="50" VerticalAlignment="Top">
-            <TextBlock Text="FAZGORN CINES"
-               Foreground="White"
-               FontSize="24"
-               FontWeight="Bold"
-               VerticalAlignment="Center"
-               HorizontalAlignment="Center"/>
-        </Border>
-
+      
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,85,0,0">
-            <TextBlock Name="fechaAct" TextWrapping="Wrap" Text="{Binding FechaActual}" VerticalAlignment="Center" FontSize="12" Foreground="Black" FontWeight="Bold"/>
+            <TextBlock Name="fechaAct" TextWrapping="Wrap" Text="{Binding FechaActual, StringFormat='{}{0:dd/MM/yyyy}'}" VerticalAlignment="Center" FontSize="12" Foreground="Black" FontWeight="Bold"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,85,30,0">
             <Button Content="Filtrar" FontSize="16" FontWeight="Bold" Foreground="Gray" Background="Transparent" Click="Filtro_Click" />
@@ -35,9 +27,9 @@
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Button Width="100" Height="150" Margin="10" Content="{Binding titulo}"
+                        <Button x:Name="TextoPelicula" Width="100" Height="150" Margin="10" Content="{Binding titulo}"
                         VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                        BorderBrush="Black" BorderThickness="1" Background="White"/>
+                        BorderBrush="Black" BorderThickness="1" Background="White" Click="btnPeli_Click"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

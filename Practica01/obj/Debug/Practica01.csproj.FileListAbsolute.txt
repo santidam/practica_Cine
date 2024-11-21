@@ -76,7 +76,6 @@ C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\CargarPel
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\Creditos.g.cs
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\MainWindow.g.cs
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\Menu_2.g.cs
-C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\MostrarPeliculas.g.cs
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\ReservarButaca.g.cs
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\SeleccionarHorario.g.cs
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -117,7 +116,6 @@ C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\CargarPel
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\Creditos.baml
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\MainWindow.baml
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\Menu_2.baml
-C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\MostrarPeliculas.baml
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\ReservarButaca.baml
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\SeleccionarHorario.baml
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\Practica01.csproj.Up2Date
@@ -192,3 +190,7 @@ C:\Users\valen\Desktop\Practica\practica_Cine\Practica01\obj\Debug\Practica01.cs
 C:\Users\valen\Desktop\Practica\practica_Cine\Practica01\obj\Debug\2.02.exe
 C:\Users\valen\Desktop\Practica\practica_Cine\Practica01\obj\Debug\2.02.pdb
 C:\Users\valen\Desktop\Practica\practica_Cine\Practica01\bin\Debug\2.02.pdb
+C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\Filtro.g.cs
+C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\InicioPeliculas.g.cs
+C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\Filtro.baml
+C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\InicioPeliculas.baml

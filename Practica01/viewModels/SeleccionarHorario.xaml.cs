@@ -45,12 +45,10 @@ namespace Practica01.viewModels
             
             HorariosStackPanel.Children.Clear();
             var mostrarPeliculasViewModel = DataContext as InicioPeliculas;
-            if (mostrarPeliculasViewModel != null)
+            //if (mostrarPeliculasViewModel != null)
 
-            {
-                string formato = "dd 'de' MMMM 'de' yyyy";
-                DateTime? fechaSeleccionada  = DateTime.ParseExact(mostrarPeliculasViewModel.fechaAct.Name, formato, new CultureInfo("es-ES"));
-                MessageBox.Show(fechaSeleccionada.ToString());
+            //{
+                DateTime? fechaSeleccionada = mostrarPeliculasViewModel.FechaActual;
                 if (!fechaSeleccionada.HasValue) { fechaSeleccionada = DateTime.Today; }
                
                 {
@@ -69,12 +67,11 @@ namespace Practica01.viewModels
                        
                     }
                 }
-            }
+            //}
 
         }
         private void Titulo_TargetUpdated(object sender, DataTransferEventArgs e)
         {
-            addSalas();
             horarios_Botones();
             
         }
@@ -96,21 +93,6 @@ namespace Practica01.viewModels
             return hora.ToString(@"hh\:mm");
         }
 
-        public void addSalas()
-        {
-            var mostrarPeliculasViewModel = DataContext as MostrarPeliculas;
-            if (mostrarPeliculasViewModel != null)
-            {
-                DateTime? fechaSeleccionada = mostrarPeliculasViewModel.FechaSeleccionada;
-
-                //{
-                //    foreach (Pelicula p in Controlador.Instance.pl)
-                //    {
-                //        Sala s = new Sala(p.sala, p.horaInicio, fechaSeleccionada, p.titulo);
-                //        Controlador.Instance.addSala(s);
-                //    }
-                //}
-            }
-        }
+        
     }
 }

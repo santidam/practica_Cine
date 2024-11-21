@@ -63,7 +63,7 @@ namespace Practica01.viewModels
                 {
                     if (Pelicula.sala.id_sesion == 0) { Controlador.Instance.AddSesion(Pelicula); }
                     if(Pelicula.sala.id_sesion != 0) { Controlador.Instance.UpdateSesion(Pelicula); }
-                    frame.Navigate(new MostrarPeliculas(frame));
+                    frame.Navigate(new InicioPeliculas(frame));
                 }
             }
 

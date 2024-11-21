@@ -44,7 +44,7 @@ namespace Practica01.viewModels
             this.DataContext = this;
 
             // Instancias iniciales de las páginas
-            this.mostrarPeliculas = new InicioPeliculas();
+            this.mostrarPeliculas = new InicioPeliculas(ContentArea);
             this.creditos = new Creditos();
             this.cargarPeliculas = new Cargar_Peliculas();
 

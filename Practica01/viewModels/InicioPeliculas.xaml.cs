@@ -3,6 +3,7 @@ using Practica01.DAO2;
 using Practica01.models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -22,16 +23,23 @@ namespace Practica01.viewModels
     /// <summary>
     /// Lógica de interacción para InicioPeliculas.xaml
     /// </summary>
-    public partial class InicioPeliculas : Page
+    public partial class InicioPeliculas : Page, INotifyPropertyChanged
 
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private string _textoPelicula;
+
+
         private Controlador Controlador;
         public List<Pelicula> peliculas { get; set; }
         public List<Pelicula> pelisFiltradas { get; set; }
-        public string FechaActual { get; set; }
+        public DateTime FechaActual { get; set; }
         private PeliculaDAO peliculaDAO;
-        public InicioPeliculas()
+        private Frame Frame;
+        public InicioPeliculas(Frame frame)
         {
+            this.Frame = frame;
             InitializeComponent();
             Controlador = Controlador.Instance;
             peliculas = Controlador.GetPeliculasToday();
@@ -42,7 +50,7 @@ namespace Practica01.viewModels
         private void CargarPeliculasHoy()
         {
             pelisFiltradas = peliculaDAO.ObtenerPeliculasToday();
-            FechaActual = DateTime.Now.ToString("dd 'de' MMMM 'de' yyyy", new CultureInfo("es-ES"));
+            FechaActual = DateTime.Today;
             DataContext = this;
         }
         internal void ShowDialog()
@@ -60,16 +68,41 @@ namespace Practica01.viewModels
                 var idiomasFiltro = filtrar.idiomasFiltro;
                 var fechaFiltro = filtrar.FechaFiltro;
 
-                pelisFiltradas = peliculaDAO.ObtenerPeliculasFiltradas(generosFiltro, idiomasFiltro, fechaFiltro);
+               
 
                 if (fechaFiltro.HasValue)
                 {
-                    FechaActual = fechaFiltro.Value.ToString("dd 'de' MMMM 'de' yyyy", new CultureInfo("es-ES"));
+                    FechaActual = fechaFiltro.Value;
                 }
+                pelisFiltradas = peliculaDAO.ObtenerPeliculasFiltradas(generosFiltro, idiomasFiltro, FechaActual);
 
                 DataContext = null;
                 DataContext = this;
             }
+        }
+
+        public string TextoPelicula
+        {
+            get => _textoPelicula;
+            set
+            {
+                _textoPelicula = value;
+                OnPropertyChanged(nameof(TextoPelicula));
+            }
+        }
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
+       
+        private void btnPeli_Click(object sender, RoutedEventArgs e)
+        {
+            TextoPelicula = ((Button)sender).Content.ToString();
+
+            NavigationService.Navigate(new SeleccionarHorario(this, Frame));
+
         }
     }
 }

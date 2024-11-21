@@ -32,7 +32,7 @@ namespace Practica01.DAO2
                     {
                         peliculas.Add(new Pelicula
                         (
-                            titulo: reader.GetString(0),
+                            titulo: TimeSpanExtensions.Capitalize(reader.GetString(0)),
                             sala: new Sala(0, DateTime.Today)
                        
                         )
@@ -62,7 +62,7 @@ namespace Practica01.DAO2
                             pelicula.Add(new Pelicula
                             (
                                 id: reader.GetInt32(0),
-                                titulo: reader.GetString(1),
+                                titulo: TimeSpanExtensions.Capitalize(reader.GetString(1)),
                                 idioma: reader.GetString(2),
                                 horario: reader.GetTimeSpan(3),
                                 sala: new Sala(reader.GetInt32(4),p.sala.fecha)
@@ -281,7 +281,7 @@ namespace Practica01.DAO2
                             peliculas.Add(new Pelicula
                             (
 
-                                titulo: reader.GetString(0)
+                                titulo: TimeSpanExtensions.Capitalize(reader.GetString(0)) 
 
                             ));
                         }
@@ -291,7 +291,7 @@ namespace Practica01.DAO2
 
             return peliculas;
         }
-        Insertar una nueva película
+        //Insertar una nueva película
         public void InsertarPelicula(Pelicula pelicula)
         {
             using (var connection = new NpgsqlConnection(_connectionString))
@@ -348,7 +348,7 @@ namespace Practica01.DAO2
                     {
                         if (reader.Read())
                         {
-                            p1 = new Pelicula(reader.GetInt32(1), reader.GetString(2), reader.GetString(4), reader.GetTimeSpan(3), new Sala(reader.GetInt32(6),reader.GetInt32(7), reader.GetFieldValue<int[]>(5), reader.GetDateTime(0)));
+                            p1 = new Pelicula(reader.GetInt32(1), TimeSpanExtensions.Capitalize(reader.GetString(2)) , reader.GetString(4), reader.GetTimeSpan(3), new Sala(reader.GetInt32(6),reader.GetInt32(7), reader.GetFieldValue<int[]>(5), reader.GetDateTime(0)));
                         }
                     }
 

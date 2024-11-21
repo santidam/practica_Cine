@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\admin\source\repos\Practica01\Practica01\App.xaml
-11-1749638715
+10315511874
 
-25-2027821966
+242048571009
 31-795433448
-viewModels\CargarPeliculas.xaml;viewModels\Cargar_Peliculas.xaml;viewModels\Creditos.xaml;dictionaries\ToggleButtonStyle.xaml;viewModels\Filtro.xaml;viewModels\InicioPeliculas.xaml;viewModels\MainWindow.xaml;viewModels\Menu_2.xaml;viewModels\MostrarPeliculas.xaml;viewModels\ReservarButaca.xaml;viewModels\SeleccionarHorario.xaml;
+viewModels\CargarPeliculas.xaml;viewModels\Cargar_Peliculas.xaml;viewModels\Creditos.xaml;dictionaries\ToggleButtonStyle.xaml;viewModels\Filtro.xaml;viewModels\InicioPeliculas.xaml;viewModels\MainWindow.xaml;viewModels\Menu_2.xaml;viewModels\ReservarButaca.xaml;viewModels\SeleccionarHorario.xaml;
 
-True
+False
 
