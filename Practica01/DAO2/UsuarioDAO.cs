@@ -13,7 +13,7 @@ namespace Practica01.DAO2
 
     public class UsuarioDAO
     {
-        private string _connectionString = "Host=localhost;Port=6060;Username=postgres;Password=santi;Database=cineDAO;";
+        private string _connectionString = "Host=localhost;Port=5432;Username=postgres;Password=1234;Database=cineDAO;";
 
         public List<Usuario> ObtenerUsuarios()
         {
