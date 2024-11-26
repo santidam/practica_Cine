@@ -8,9 +8,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="InicioPeliculas">
     
-    <Grid>
+    <Grid>  
       
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,25,0,0">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="45,25,0,0">
             <TextBlock Name="fechaAct" TextWrapping="Wrap" Text="{Binding FechaActual, StringFormat='{}{0:dd/MM/yyyy}'}" VerticalAlignment="Center" FontSize="12" Foreground="Black" FontWeight="Bold"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,25,30,0">
@@ -29,7 +29,7 @@
                     <DataTemplate>
                         <Button x:Name="TextoPelicula" Width="100" Height="150" Margin="10" Content="{Binding titulo}"
                         VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                        BorderBrush="Black" BorderThickness="1" Background="White" Click="btnPeli_Click"/>
+                        BorderBrush="Black" BorderThickness="1" Background="AliceBlue" Click="btnPeli_Click"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

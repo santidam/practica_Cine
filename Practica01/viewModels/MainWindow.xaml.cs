@@ -23,6 +23,7 @@ namespace Practica01.viewModels
     /// </summary>
     public partial class MainWindow : VentanaBase
     {
+        private Usuario Usuario;
         private Controlador Controlador;
         public MainWindow()
         {
@@ -37,7 +38,7 @@ namespace Practica01.viewModels
             try
             {
                 
-                if (Controlador.validUser(tbCorreo.Text, tbPass.Password)) { Menu_2 menu_2 = new Menu_2(Controlador, this); menu_2.Show(); this.Hide(); };
+                if (Controlador.validUser(tbCorreo.Text, tbPass.Text)) { Menu_2 menu_2 = new Menu_2(Controlador, this); menu_2.Show(); this.Hide(); };
                
             }
             catch (ArgumentException ex)
@@ -45,6 +46,20 @@ namespace Practica01.viewModels
                 MessageBox.Show(ex.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
+        }
+        public void FunctionValidationError(object sender, ValidationErrorEventArgs e)
+        {
+            if (e.Action == ValidationErrorEventAction.Added)
+            {
+                numErrors++;
+            } else
+            {
+                numErrors--;
+            }
+            if (numErrors == 0)
+            {
+                butAfegir.IsEnabled = true;
+            }
         }
     }
 }
