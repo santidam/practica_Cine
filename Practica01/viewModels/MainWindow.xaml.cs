@@ -25,9 +25,12 @@ namespace Practica01.viewModels
     {
         private Usuario Usuario;
         private Controlador Controlador;
+        private int numErrors;
         public MainWindow()
         {
             InitializeComponent();
+            this.Usuario = new Usuario();
+            this.DataContext = this.Usuario;
             this.Controlador = new Controlador();
         }
 
@@ -58,8 +61,13 @@ namespace Practica01.viewModels
             }
             if (numErrors == 0)
             {
-                butAfegir.IsEnabled = true;
+                btnEntrar.IsEnabled = true;
+            } else
+            {
+                btnEntrar.IsEnabled = false;
+                labelValidationErrors.Content = e.Error.ErrorContent.ToString();
+
             }
         }
-    }
+    } 
 }

@@ -12,6 +12,8 @@ namespace Practica01.models
     public class Usuario : IDataErrorInfo
     {
         private String Email { get; set; }
+        public string[] erroresPosibles { get; set; }
+        public string[] erroresReales { get; set; }
         public String email
         {
             get { return Email; }
@@ -46,14 +48,14 @@ namespace Practica01.models
             get
             {
                 string result = "";
-                if (columnName == Email)
+                if (columnName == "email")
                 {
                     if (string.IsNullOrEmpty(Email))
                     {
                         result = "El email no puede estar vacio";
                     }
                 }
-                if (columnName == Password)
+                if (columnName == "password")
                 {
                     if (string.IsNullOrEmpty(Password))
                     {
@@ -76,7 +78,22 @@ namespace Practica01.models
             this.Email = "";
             this.Password = "";
         }
+        public void ResetErrors()
+        {
+            erroresPosibles = new string[4] {
+                "El e-mail no puede estar vacío",
+                "Formato de e-mail no válido. Debe ser: usuario@dominio.extensión",
+                "La contraseña no puede estar vacía",
+                "La contraseña debe tener 3 caracteres"
+            };
 
+            erroresReales = new string[4] {
+                "El e-mail no puede estar vacío",
+                "Formato de e-mail no válido. Debe ser: usuario@dominio.extensión",
+                "La contraseña no puede estar vacía",
+                "La contraseña debe tener 3 caracteres"
+            };
+        }
 
     }
 
