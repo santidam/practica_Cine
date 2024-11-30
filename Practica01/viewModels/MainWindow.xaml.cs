@@ -26,12 +26,26 @@ namespace Practica01.viewModels
         private Usuario Usuario;
         private Controlador Controlador;
         private int numErrors;
+        private int ErrorsClose;
         public MainWindow()
         {
             InitializeComponent();
             this.Usuario = new Usuario();
             this.DataContext = this.Usuario;
             this.Controlador = new Controlador();
+        }
+        public void DisplayErrorsValidation()
+        {
+            string msg = "";
+            foreach (string st in Usuario.erroresReales)
+            {
+                if (!string.IsNullOrEmpty(st))
+                {
+                    msg += st + Environment.NewLine;
+                }
+                
+            }
+            labelValidationErrors.Content = msg;
         }
 
  
@@ -41,12 +55,15 @@ namespace Practica01.viewModels
             try
             {
                 
-                if (Controlador.validUser(tbCorreo.Text, tbPass.Text)) { Menu_2 menu_2 = new Menu_2(Controlador, this); menu_2.Show(); this.Hide(); };
+                if (Controlador.validUser(tbCorreo.Text, tbPass.Text)) { Menu_2 menu_2 = new Menu_2(Controlador, this); menu_2.Show(); this.Close(); };
                
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(ex.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                ErrorsClose++;
+                var intentos = 3 - ErrorsClose;
+                MessageBox.Show(ex.Message+". INTENTOS RESTANTES: "+intentos, "ERROR NÚMERO "+ErrorsClose, MessageBoxButton.OK, MessageBoxImage.Error);
+                if(ErrorsClose==3)this.Close();
             }
 
         }
@@ -62,10 +79,11 @@ namespace Practica01.viewModels
             if (numErrors == 0)
             {
                 btnEntrar.IsEnabled = true;
+                DisplayErrorsValidation();
             } else
             {
                 btnEntrar.IsEnabled = false;
-                labelValidationErrors.Content = e.Error.ErrorContent.ToString();
+                DisplayErrorsValidation();
 
             }
         }

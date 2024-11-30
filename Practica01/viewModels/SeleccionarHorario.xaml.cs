@@ -63,6 +63,7 @@ namespace Practica01.viewModels
                             btn.Height = 70;
                             btn.Tag = p;
                             btn.Click += new RoutedEventHandler(Boton_Click);
+                            btn.Background = Brushes.AliceBlue;
                             HorariosStackPanel.Children.Add(btn);
                        
                     }

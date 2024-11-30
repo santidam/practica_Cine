@@ -63,7 +63,8 @@ namespace Practica01.viewModels
 
         private void Salir_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.Show();
+            MainWindow mw = new MainWindow();
+            mw.Show();
             this.Close();
         }
 
@@ -75,7 +76,7 @@ namespace Practica01.viewModels
 
         private void Menu_Inicio_Click(object sender, RoutedEventArgs e)
         {
-            ContentArea.Navigate(MostrarPeliculas);
+            ContentArea.Navigate(new InicioPeliculas(ContentArea));
         }
         
 

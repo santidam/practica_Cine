@@ -14,7 +14,7 @@ namespace Practica01.DAO2
 
     public class PeliculaDAO
     {
-        private string _connectionString = "Host=localhost;Port=5432;Username=postgres;Password=1234;Database=cineDAO;";
+        private string _connectionString = "Host=localhost;Port=6060;Username=postgres;Password=santi;Database=cineDAO;";
 
         public PeliculaDAO() { }
         // Obtener todas las películas
@@ -25,7 +25,7 @@ namespace Practica01.DAO2
             using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT DISTINCT titulo FROM peliculas WHERE fecha_inicio <= CURRENT_DATE AND fecha_final >= CURRENT_DATE", connection))
+                using (var command = new NpgsqlCommand("SELECT DISTINCT UPPER(titulo) FROM peliculas WHERE fecha_inicio <= CURRENT_DATE AND fecha_final >= CURRENT_DATE", connection))
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -50,7 +50,7 @@ namespace Practica01.DAO2
             using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT id, titulo, idioma, horario, sala_id  FROM peliculas WHERE LOWER(titulo) = LOWER(@titu) AND fecha_inicio<= @fecha1 AND fecha_final >= @fecha2", connection))
+                using (var command = new NpgsqlCommand("SELECT id, titulo, idioma, horario, sala_id  FROM peliculas WHERE LOWER(titulo) = LOWER(@titu) AND fecha_inicio<= @fecha1 AND fecha_final >= @fecha2 ORDER BY horario", connection))
                 {
                     command.Parameters.AddWithValue("titu",p.titulo);
                     command.Parameters.AddWithValue("fecha1",p.sala.fecha);
@@ -221,7 +221,7 @@ namespace Practica01.DAO2
                 connection.Open();
 
                 // Base de la consulta SQL
-                var query = @"SELECT DISTINCT titulo 
+                var query = @"SELECT DISTINCT LOWER(titulo) 
                       FROM peliculas 
                       WHERE 1=1";  // 1=1 permite agregar condiciones dinámicamente
 
@@ -248,7 +248,7 @@ namespace Practica01.DAO2
                     {
                         if (i > 0) query += " OR ";
                         query += $"@genero{i} = ANY(genero)";
-                        parameters.Add(new NpgsqlParameter($"@genero{i}", generosSeleccionados[i]));
+                        parameters.Add(new NpgsqlParameter($"@genero{i}", generosSeleccionados[i].ToLower()));
                     }
                     query += ")";
                 }
@@ -260,8 +260,8 @@ namespace Practica01.DAO2
                     for (int i = 0; i < idiomasSeleccionados.Count; i++)
                     {
                         if (i > 0) query += " OR ";
-                        query += $"idioma = @idioma{i}";
-                        parameters.Add(new NpgsqlParameter($"@idioma{i}", idiomasSeleccionados[i]));
+                        query += $"LOWER(idioma) = @idioma{i}";
+                        parameters.Add(new NpgsqlParameter($"@idioma{i}", idiomasSeleccionados[i].ToLower()));
                     }
                     query += ")";
                 }

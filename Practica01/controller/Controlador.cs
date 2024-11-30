@@ -29,7 +29,7 @@ namespace Practica01.controller
         private UsuarioDAO UsuarioDAO;
 
         private FileReader FileReader;
-        private List<Usuario> Usuarios { get; set; }
+        
         private Usuario Usuario {  get; set; }
         public HashSet<Sala> Salas {  get; set; }
 
@@ -49,10 +49,9 @@ namespace Practica01.controller
 
             this.pl = new ObservableCollection<Pelicula> ();
             this.Salas = new HashSet<Sala>();
-            this.Usuarios = new List<Usuario> ();
+            
             this.Usuario = null;
-            Usuarios.Add(new Usuario("admin@admin.com", "admin", "1234", true));
-            Usuarios.Add(new Usuario("user@user.com", "user", "1234", false));
+            
 
 
         }
@@ -81,13 +80,7 @@ namespace Practica01.controller
         }
 
         
-        public Usuario findUser(String email) {
-            foreach (var i in Usuarios )
-            {
-                if (i.email.Equals(email)) return i;
-            }
-            return null;
-        }
+  
 
         public bool isAdmin()
         {
@@ -95,41 +88,17 @@ namespace Practica01.controller
         }
 
 
-        public void OrdenarSalaPorHora()
-        {
-            // Ordenar las peliculas por Duracion
-            var salasOrdenadas = Salas.OrderBy(s => s.hora).ToList();
-            Salas.Clear();
-            foreach (Sala s in salasOrdenadas)
-            {
-                Salas.Add(s);
-            }
-
-        }
+  
 
         //ADD
 
-        //public void addPelicula(Pelicula pelicula) { Peliculas.Add (pelicula);}
 
-        public void addSala(Sala sala) {Salas.Add (sala);}
 
         //GET BY        
-        public Sala getSalaBy_NumHoraDia(int num, TimeSpan hora, DateTime? dia)
-        {
-            foreach (Sala s in Salas)
-            {
-                if(s.numero == num && s.hora == hora && s.fecha == dia)
-                {
-                    return s;
-                }
-            }
-            return null;
-               
-        }
+   
         public List<Pelicula> getPeliculaByName(String nombre)
         {
-            //foreach (var p in pl) { if(p.titulo.Equals(nombre)) return p; }
-            //return null;
+        
             return PeliculaDAO.ObtenerPeliculasByName(new Pelicula(nombre));
         }
 
@@ -198,8 +167,7 @@ namespace Practica01.controller
 
         public Boolean validUser(String correo, String password)
         {
-            valMail(correo);
-            valPassword(password);
+      
             Usuario u = UsuarioDAO.findUser(correo);
             if (u == null) throw new ArgumentException("El usuario no existe");
 
@@ -208,18 +176,7 @@ namespace Practica01.controller
 
         }
 
-        public Boolean valMail(String corroe)
-        {
-            return true;
-        }
-        public Boolean valPassword(String password)
-        {
-            Boolean aux = true;
-            if (password.Length < 4)
-            {
-                aux = false;
-            }
-            return aux;
-        }
+    
+     
     }
 }
