@@ -215,8 +215,10 @@
     <Resource Include="images\566095.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\FazgornCines - copia.avi" />
     <Resource Include="images\san.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\FazgornCines - copia.avi" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
