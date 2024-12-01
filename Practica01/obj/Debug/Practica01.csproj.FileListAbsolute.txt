@@ -72,7 +72,6 @@ C:\Users\admin\Desktop\practica_Cine\Practica01\obj\Debug\Practica01.csproj.Core
 C:\Users\admin\Desktop\practica_Cine\Practica01\obj\Debug\2.02.exe
 C:\Users\admin\Desktop\practica_Cine\Practica01\obj\Debug\2.02.pdb
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\dictionaries\ToggleButtonStyle.baml
-C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\CargarPeliculas.g.cs
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\Creditos.g.cs
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\MainWindow.g.cs
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\Menu_2.g.cs
@@ -112,7 +111,6 @@ C:\Users\admin\source\repos\Practica01\Practica01\bin\Debug\System.Threading.Cha
 C:\Users\admin\source\repos\Practica01\Practica01\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\admin\source\repos\Practica01\Practica01\bin\Debug\System.ValueTuple.xml
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\App.baml
-C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\CargarPeliculas.baml
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\Creditos.baml
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\MainWindow.baml
 C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\viewModels\Menu_2.baml
@@ -261,3 +259,4 @@ C:\Users\valen\Desktop\PracticaPedro\practica_Cine\Practica01\obj\Debug\Practica
 C:\Users\valen\Desktop\PracticaPedro\practica_Cine\Practica01\obj\Debug\Practica01.csproj.Up2Date
 C:\Users\valen\Desktop\PracticaPedro\practica_Cine\Practica01\obj\Debug\2.02.exe
 C:\Users\valen\Desktop\PracticaPedro\practica_Cine\Practica01\obj\Debug\2.02.pdb
+C:\Users\admin\source\repos\Practica01\Practica01\obj\Debug\2.02_Content.g.cs

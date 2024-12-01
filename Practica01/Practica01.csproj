@@ -128,14 +128,7 @@
       <DependentUpon>SeleccionarHorario.xaml</DependentUpon>
     </Compile>
     <Compile Include="models\Usuario.cs" />
-    <Compile Include="viewModels\CargarPeliculas.xaml.cs">
-      <DependentUpon>CargarPeliculas.xaml</DependentUpon>
-    </Compile>
     <Compile Include="models\VentanaBase.cs" />
-    <Page Include="viewModels\CargarPeliculas.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="viewModels\Cargar_Peliculas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -214,9 +207,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="images\jor.png" />
+    <Resource Include="images\val.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="images\566095.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\FazgornCines - copia.avi" />
+    <Resource Include="images\san.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

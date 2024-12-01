@@ -22,7 +22,6 @@ namespace Practica01.controller
         
         private static readonly object _lock = new object();
 
-        //private List<Pelicula> Peliculas {  get; set; }
 
         private PeliculaDAO PeliculaDAO;
 
@@ -31,11 +30,8 @@ namespace Practica01.controller
         private FileReader FileReader;
         
         private Usuario Usuario {  get; set; }
-        public HashSet<Sala> Salas {  get; set; }
 
-        public ObservableCollection<Pelicula> pl; //de pruebas No tiene hace falta que sea un ObservableCollection
         
-        private PelisList pelis;
 
 
 
@@ -44,11 +40,7 @@ namespace Practica01.controller
             this.PeliculaDAO = new PeliculaDAO();
             this.UsuarioDAO = new UsuarioDAO();
             this.FileReader = new FileReader();
-            this.pelis = new PelisList(); //de pruebas
-            //this.pl = pelis.OrdenarPeliculasPorHoraInicio();  // de pruebas
 
-            this.pl = new ObservableCollection<Pelicula> ();
-            this.Salas = new HashSet<Sala>();
             
             this.Usuario = null;
             
@@ -102,11 +94,7 @@ namespace Practica01.controller
             return PeliculaDAO.ObtenerPeliculasByName(new Pelicula(nombre));
         }
 
-        public Pelicula getPeliculaBy_TituloHoraSala(String titulo, TimeSpan hora, int numSala)
-        {
-            foreach(Pelicula p in pl) { if (p.titulo.Equals(titulo) && p.horaInicio == hora && p.sala.numero == numSala) return p; };
-            return null;
-        }
+      
         //Añadiendo GUI Valentina
 
         public List<Pelicula> GetPeliculasToday()

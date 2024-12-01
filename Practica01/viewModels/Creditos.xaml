@@ -6,7 +6,40 @@
       xmlns:local="clr-namespace:Practica01"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Creditos">
+      Title="Creditos"
+      Unloaded="Creditos_Unloaded">
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="HoverColorButton">
+            <!-- Eliminamos cualquier fondo visible -->
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Cursor" Value="Hand"/>
+
+            <!-- Definimos la plantilla personalizada -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <!-- Solo se muestra el texto, sin bordes ni fondo -->
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center" 
+                                      TextBlock.Foreground="{TemplateBinding Foreground}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <!-- Trigger para cambiar el color del texto al pasar el ratón -->
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Red"/>
+                    <!-- Cambia solo la letra a rojo -->
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
+
 
     <Grid Margin="20" Background="White">
         <Grid.RowDefinitions>
@@ -14,21 +47,39 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" VerticalAlignment="Center">
+        <!-- Imagen Inicial -->
+        <Image x:Name="imageDisplay"
+               HorizontalAlignment="Left" 
+               Height="150" 
+               Margin="25,76,0,0" 
+               VerticalAlignment="Top" 
+               Width="150"
+               Source="{x:Null}" MouseLeftButtonDown="imageDisplay_MouseLeftButtonDown" Cursor="Hand">
+
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="imageTransform" />
+            </Image.RenderTransform>
+        </Image>
+        
+
+        <!-- Botones -->
+        <StackPanel Grid.Row="0" VerticalAlignment="Top" Margin="0,0,0,0">
             <TextBlock Text="Creadores" 
                        FontSize="24" 
                        FontWeight="Bold" 
                        Foreground="#444" 
                        HorizontalAlignment="Center" 
                        Margin="0,0,0,20"/>
+            <MediaElement x:Name="VideoFazgorn" Source="../images/FazgornCines - copia.avi" HorizontalAlignment="Left"
+              LoadedBehavior="Manual" UnloadedBehavior="Manual" Stretch="Uniform" Height="191" Margin="288,0,0,0" VerticalAlignment="Top" Width="194"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Santiago" FontSize="18" Margin="20,0"/>
-                <TextBlock Text="Valentina" FontSize="18" Margin="20,0"/>
-                <TextBlock Text="Jordi" FontSize="18" Margin="20,0"/>
+                <Button Style="{StaticResource HoverColorButton}" Content="Santiago"   FontSize="18" Margin="20,0" Click="ChangeImage_Click" Tag="../images/san.png"/>
+                <Button Content="Valentina" Style="{StaticResource HoverColorButton}" Background="White" BorderBrush="White" FontSize="18" Margin="20,0" Click="ChangeImage_Click" Tag="../images/val.png"/>
+                <Button Content="Jordi" Style="{StaticResource HoverColorButton}" FontSize="18" Background="White" BorderBrush="White" Margin="20,0" Click="ChangeImage_Click" Tag="../images/jor.png"/>
             </StackPanel>
-            
         </StackPanel>
 
+        <!-- Versión -->
         <TextBlock Grid.Row="1" 
                    Text="Versión de la app: 1.0" 
                    FontSize="14" 

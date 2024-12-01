@@ -66,7 +66,7 @@
         </Style>
     </Page.Resources>
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,20">
+    <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,20">
         <Grid Background="#FAFAFA" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="195.69"/>
@@ -103,8 +103,8 @@
 
                 <!-- Idioma -->
                 <Label Content="Idioma:"/>
-                <ComboBox x:Name="cbIdioma">
-                    <ComboBoxItem Content="Inglés"/>
+                <ComboBox x:Name="cbIdioma" >
+                    <ComboBoxItem Content="Version Original"/>
                     <ComboBoxItem Content="Español"/>
                 </ComboBox>
 

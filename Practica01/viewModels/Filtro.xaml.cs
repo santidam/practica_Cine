@@ -31,6 +31,8 @@ namespace Practica01.viewModels
         }
         private void AplicarFiltro(object sender, RoutedEventArgs e)
         {
+            //Comprobando checks y añadiendo a las listas de datos para posteriormente buscar coincidencias con datos de peliculas
+
             if (accion.IsChecked == true) generosFiltro.Add("Acción");
             if (comedia.IsChecked == true) generosFiltro.Add("Comedia");
             if (suspenso.IsChecked == true) generosFiltro.Add("Suspenso");

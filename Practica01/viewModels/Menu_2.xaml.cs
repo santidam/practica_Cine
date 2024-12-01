@@ -45,7 +45,6 @@ namespace Practica01.viewModels
 
             // Instancias iniciales de las páginas
             this.mostrarPeliculas = new InicioPeliculas(ContentArea);
-            this.creditos = new Creditos();
             this.cargarPeliculas = new Cargar_Peliculas();
 
             // Página inicial
@@ -55,10 +54,21 @@ namespace Practica01.viewModels
         }
 
       
-
+        //Logica de botones para acceder a diferentes paginas intercambiando el Frame
         private void Creadores_Click(object sender, RoutedEventArgs e)
         {
-            ContentArea.Navigate(Creditos);
+            if (creditos == null)
+            {
+                creditos = new Creditos();
+            }
+            else
+            {
+                
+                creditos.VideoFazgorn.Position = TimeSpan.Zero;
+            }
+
+            ContentArea.Navigate(creditos);
+
         }
 
         private void Salir_Click(object sender, RoutedEventArgs e)

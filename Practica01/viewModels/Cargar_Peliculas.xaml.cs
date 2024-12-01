@@ -38,6 +38,7 @@ namespace Practica01.viewModels
 
         private void RemovePlaceholder(object sender, RoutedEventArgs e)
         {
+            //Metodo para guiar al usuario con el contenido a rellenar
             var textBox = sender as TextBox;
 
             if (textBox == txtHora && placeholderHora.Visibility == Visibility.Visible)
@@ -53,6 +54,7 @@ namespace Practica01.viewModels
         }
         private void ShowPlaceholder(object sender, RoutedEventArgs e)
         {
+            //Metodo para guiar al usuario con el contenido a rellenar
             var textBox = sender as TextBox;
 
             if (textBox == txtHora && string.IsNullOrWhiteSpace(textBox.Text))
@@ -88,10 +90,9 @@ namespace Practica01.viewModels
                     return;
                 }
 
-                if (!string.IsNullOrEmpty(titulo) && fechaInicio != DateTime.MinValue && fechaFinal != DateTime.MinValue)
+                if (!string.IsNullOrEmpty(titulo) && !string.IsNullOrEmpty(idioma) && fechaInicio != DateTime.MinValue && fechaFinal != DateTime.MinValue)
                 {
                     // Lógica para guardar película
-
                     this.Pelicula.idioma = idioma;
                     this.Pelicula.generos = generosSeleccionados;
                     this.Pelicula.fechaInicio = fechaInicio;
@@ -100,10 +101,10 @@ namespace Practica01.viewModels
                     this.Pelicula.duracion = duracion;
                     this.Pelicula.sala = new Sala(sala);
 
-
-                    // peliculaDAO.InsertarPelicula(nuevaPelicula);
+                    //Guardamos la pelicula
                     Controlador.InsertPelicula(this.Pelicula);
                     MessageBox.Show("Pelicula añadida correctamente", "Aviso", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //Actualizamos la pagina
                     NavigationService.Navigate(new Cargar_Peliculas());
                 }
                 else
@@ -111,15 +112,11 @@ namespace Practica01.viewModels
                     MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-            catch (System.FormatException ex)
+            catch (System.Exception ex)
             {
-                MessageBox.Show("Por favor, complete todos los campos en el formato correcto.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Por favor, complete todos los campos en el formato correcto.", "Error "+ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            catch (System.OverflowException ex)
-            {
-                MessageBox.Show("Por favor, complete todos los campos en el formato correcto.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
+       
 
 
         }
@@ -139,12 +136,7 @@ namespace Practica01.viewModels
                 Controlador.CargarPeliculasCSV(filePath);
                 MessageBox.Show($"Archivo cargado: {filePath}", "Archivo Subido", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                //ANTES 
-                //ObservableCollection<Pelicula> newPeliculas = Reader.FileRead(filePath);
-                //foreach (Pelicula pelicula in newPeliculas)
-                //{
-                //    PeliculaDAO.InsertarPelicula(pelicula);
-                //}
+               
             }
         }
 

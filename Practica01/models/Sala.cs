@@ -15,7 +15,6 @@ namespace Practica01.models
         private TimeSpan Hora;
         private DateTime Fecha;
         private int[] DisponibilidadButacas;
-        private int Id_sala;
         private int Id_sesion;
         
 
@@ -55,26 +54,9 @@ namespace Practica01.models
             return hora.ToString(@"hh\:mm");
         }
 
-        public override bool Equals(object obj)
-        {
-            if (obj is Sala other)
-            {
-                return numero == other.numero && Hora == other.Hora && Fecha == other.fecha;
-            }
-            return false;
-        }
+    
 
-        public override int GetHashCode()
-
-
-        {
-            int hashNumero = Numero != null ? Numero.GetHashCode() : 0;
-            int hashHora = Hora.GetHashCode();
-            int hashDia = fecha.GetHashCode();
-
-
-            return hashNumero * 31 + hashHora + hashDia;
-        }
+  
 
         public int id_sesion
         {

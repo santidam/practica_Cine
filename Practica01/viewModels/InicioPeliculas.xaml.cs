@@ -60,6 +60,8 @@ namespace Practica01.viewModels
 
         private void Filtro_Click(object sender, RoutedEventArgs e)
         {
+            //Logica de filtro. Abrimos ventana filtro, extraemos los datos y obtenemos nueva lista de peliculas para mostrar
+
             Filtro filtrar = new Filtro();
             if (filtrar.ShowDialog() == true)
             {

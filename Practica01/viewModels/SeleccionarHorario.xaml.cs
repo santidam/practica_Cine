@@ -24,10 +24,7 @@ namespace Practica01.viewModels
     public partial class SeleccionarHorario : Page
     {
         
-        private string tituloSeleccionado;
         private Frame frame;
-        private readonly ObservableCollection<Pelicula> listaPelis;
-        private String titulo;
         
 
         public SeleccionarHorario(InicioPeliculas mostrarPeliculas, Frame frame)
@@ -57,7 +54,7 @@ namespace Practica01.viewModels
                         
                             
                             Button btn = new Button();
-                            btn.Content = ObtenerHoraFormateada(p.horaInicio) + "\nSala " + p.sala.numero;
+                            btn.Content = ObtenerHoraFormateada(p.horaInicio) + "\nSala " + p.sala.numero+"\n"+p.idioma;
                             btn.Margin = new Thickness(20);
                             btn.Width = 100;
                             btn.Height = 70;

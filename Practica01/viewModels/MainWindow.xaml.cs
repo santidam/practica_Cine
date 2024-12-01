@@ -36,6 +36,7 @@ namespace Practica01.viewModels
         }
         public void DisplayErrorsValidation()
         {
+            //Metodo para mostrar erroes en pantalla
             string msg = "";
             foreach (string st in Usuario.erroresReales)
             {
@@ -52,6 +53,7 @@ namespace Practica01.viewModels
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //Metodo para logearse y ontrolar el limite de 3 fallos
             try
             {
                 
@@ -69,6 +71,7 @@ namespace Practica01.viewModels
         }
         public void FunctionValidationError(object sender, ValidationErrorEventArgs e)
         {
+            //Metodo para permitir click en login si no hay errores
             if (e.Action == ValidationErrorEventAction.Added)
             {
                 numErrors++;

@@ -13,11 +13,11 @@
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="45,25,0,0">
             <TextBlock Name="fechaAct" TextWrapping="Wrap" Text="{Binding FechaActual, StringFormat='{}{0:dd/MM/yyyy}'}" VerticalAlignment="Center" FontSize="12" Foreground="Black" FontWeight="Bold"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,25,30,0">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,20,30,0">
             <Button Content="Filtrar" FontSize="16" FontWeight="Bold" Foreground="Gray" Background="Transparent" Click="Filtro_Click" />
         </StackPanel>
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20,90,20,20">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20,50,20,20">
             <ItemsControl ItemsSource="{Binding pelisFiltradas}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>

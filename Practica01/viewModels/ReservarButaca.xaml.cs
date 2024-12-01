@@ -31,8 +31,6 @@ namespace Practica01.viewModels
         private Frame frame;
         private Pelicula Pelicula;
         private int[] butacasDisponibles;
-        private bool toggleButtonEnabled;
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public ReservarButaca(SeleccionarHorario seleccionarHorario, Frame frame, Pelicula pelicula)
         {
